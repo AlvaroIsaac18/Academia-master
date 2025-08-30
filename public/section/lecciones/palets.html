@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/cursos.css" />
+    <style>
+      /* ========== ESTILOS GENERALES ========== */
+      .leccion-page-mc {
+        background-color: #f8f9fa;
+        min-height: 100vh;
+        padding: 2rem 0;
+      }
+
+      .leccion-container-mc {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* ========== HEADER DE PÁGINA ========== */
+      .leccion-header-mc {
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .leccion-title-mc {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #13161c;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .leccion-subtitle-mc {
+        font-size: 1.2rem;
+        color: #6c757d;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        line-height: 1.6;
+      }
+
+      /* ========== NAVEGACIÓN INTERNA ========== */
+      .leccion-nav-mc {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 3rem;
+      }
+
+      .leccion-nav-link-mc {
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        padding: 12px 25px;
+        border-radius: 30px;
+        color: #6c757d;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .leccion-nav-link-mc:hover {
+        background: #e9ecef;
+        color: #13161c;
+      }
+
+      .leccion-nav-link-mc.active {
+        background: #98ca3f;
+        color: #13161c;
+        border-color: #98ca3f;
+      }
+
+      /* ========== SECCIONES DE CONTENIDO ========== */
+      .leccion-section-mc {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .leccion-section-header-mc {
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .leccion-section-icon-mc {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #0b335b, #1a1a2e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      .leccion-section-title-mc {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #13161c;
+        margin: 0;
+      }
+
+      .leccion-section-content-mc {
+        line-height: 1.7;
+        color: #6c757d;
+      }
+
+      .leccion-section-content-mc p {
+        margin-bottom: 20px;
+      }
+
+      /* ========== TARJETAS DE INFORMACIÓN ========== */
+      .leccion-cards-mc {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+      }
+
+      .leccion-card-mc {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 25px;
+        border-left: 4px solid #98ca3f;
+      }
+
+      .leccion-card-title-mc {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #13161c;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .leccion-card-content-mc {
+        color: #6c757d;
+        line-height: 1.6;
+      }
+
+      /* ========== COMPARATIVAS ========== */
+      .leccion-table-mc {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .leccion-table-mc th,
+      .leccion-table-mc td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .leccion-table-mc th {
+        background: linear-gradient(135deg, #0b335b, #1a1a2e);
+        color: white;
+        font-weight: 600;
+      }
+
+      .leccion-table-mc tr:last-child td {
+        border-bottom: none;
+      }
+
+      .leccion-table-mc tr:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+
+      /* Estilos para las imágenes */
+      .leccion-image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .leccion-image-item {
+        flex: 1 1 45%; /* Permite 2 imágenes por fila en pantallas grandes */
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .leccion-image-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .leccion-image-item p {
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: #555;
+      }
+
+      @media (max-width: 768px) {
+        .leccion-image-item {
+          flex: 1 1 100%; /* Una imagen por fila en pantallas pequeñas */
+        }
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 768px) {
+        .leccion-title-mc {
+          font-size: 2.2rem;
+        }
+
+        .leccion-nav-mc {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .leccion-cards-mc {
+          grid-template-columns: 1fr;
+        }
+
+        .leccion-table-mc {
+          display: block;
+          overflow-x: auto;
+        }
+
+        .leccion-section-header-mc {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .leccion-title-mc {
+          font-size: 1.8rem;
+        }
+
+        .leccion-section-mc {
+          padding: 20px;
+        }
+
+        .leccion-section-title-mc {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar-mc animate__animated animate__fadeInDown">
+      <div class="navbar-container-mc">
+        <a href="#" class="navbar-brand-mc">
+          <img src="../../img/init/logoProvi.jpeg" alt="Logo" />
+        </a>
+
+        <ul class="navbar-menu-mc">
+          <li class="navbar-item-mc">
+            <a href="/index.html" class="navbar-link-mc"
+              ><i class="fas fa-home me-2"></i>Inicio</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../cursos.html" class="navbar-link-mc"
+              ><i class="fas fa-graduation-cap me-2"></i>Cursos</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../precios.html" class="navbar-link-mc"
+              ><i class="fas fa-tags me-2"></i>Precios</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../contacto.html" class="navbar-link-mc"
+              ><i class="fas fa-envelope me-2"></i>Contacto</a
+            >
+          </li>
+        </ul>
+
+        <div class="navbar-actions-mc">
+          <div class="navbar-search-mc">
+            <i class="fas fa-search search-icon-mc"></i>
+            <input
+              type="text"
+              class="search-input-mc"
+              placeholder="Buscar..."
+            />
+          </div>
+           <button class="btn-login-mc">
+            <i class="fas fa-sign-in-alt me-2"></i
+            ><a href="../proximo.html"> Iniciar sesión</a>
+          </button>
+          <button class="btn-signup-mc">
+            <i class="fas fa-user-plus me-2"></i>
+            <a href="../proximo.html">Regístrate</a>
+          </button>
+        </div>
+
+        <button class="navbar-toggle-mc" id="navbarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="mobile-menu-mc" id="mobileMenu">
+        <ul>
+          <li class="mobile-menu-item-mc">
+            <a href="/index.html" class="mobile-menu-link-mc">Inicio</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../cursos.html" class="mobile-menu-link-mc">Cursos</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../contacto.html" class="mobile-menu-link-mc">Contacto</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../precios.html" class="mobile-menu-link-mc">Precios</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="leccion-page-mc">
+      <div class="leccion-container-mc">
+        <header class="leccion-header-mc">
+          <h1 class="leccion-title-mc">
+            Manejo y Tipos de Palets: Un Enfoque en la Seguridad y Eficiencia
+          </h1>
+          <p class="leccion-subtitle-mc">
+            La operación segura de un montacargas es una tarea crítica que
+            demanda una comprensión profunda de los principios de estabilidad,
+            la gestión de la carga y el mantenimiento de un centro de gravedad
+            adecuado. Este módulo técnico explora las consideraciones
+            fundamentales para prevenir incidentes y garantizar la eficiencia
+            operativa, enfatizando la correlación entre la capacidad del equipo,
+            la manipulación de materiales y la seguridad del operador.
+          </p>
+
+          <nav class="leccion-nav-mc">
+            <a href="#estabilidad" class="leccion-nav-link-mc active">
+              <i class="fas fa-balance-scale"></i> Estabilidad y Centro de
+              Gravedad
+            </a>
+            <a href="#carga" class="leccion-nav-link-mc">
+              <i class="fas fa-box"></i> Gestión de la Carga
+            </a>
+            <a href="#procedimientos" class="leccion-nav-link-mc">
+              <i class="fas fa-clipboard-check"></i> Procedimientos de Seguridad
+            </a>
+            <a href="#casos" class="leccion-nav-link-mc">
+              <i class="fas fa-exclamation-triangle"></i> Casos Prácticos
+            </a>
+          </nav>
+        </header>
+
+        <section id="estabilidad" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-box-open"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Tipos de Palets y su Aplicación 
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <p>
+              Existen diversos tipos de palets, cada uno diseñado con
+              dimensiones específicas para adaptarse a la logística global.
+              Conocer sus características es vital para asegurar la compatibilidad
+              con el montacargas y la seguridad de la carga.
+            </p>
+
+            <div class="leccion-image-container">
+              <div class="leccion-image-item">
+                <img
+                  src="../../img/init/paletAmericano.jpg"
+                  alt="Palet Americano"
+                />
+                <p>
+                  <i class="fas fa-ruler-combined me-2"></i>
+                  <br />
+                  **Palet Americano:** Con dimensiones de **1200 x 1000 mm**, este palet es un estándar en el continente americano y se utiliza ampliamente en cadenas de suministro de bienes de consumo masivo y productos industriales.
+                </p>
+              </div>
+              <div class="leccion-image-item">
+                <img
+                  src="../../img/init/paletEuropeo.jpg"
+                  alt="Palet Europeo o Europalet"
+                />
+                <p>
+                  <i class="fas fa-globe-europe me-2"></i>
+                  <br />
+                  **Palet Europeo o Europalet:** Estandarizado en **1200 x 800 mm**, es el más común en Europa. Su diseño es ideal para el transporte por carretera y ferrocarril, optimizando el espacio en camiones y contenedores.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              Además de los palets estándar, existen diseños especializados para usos específicos, como el **Palet Químico**, que se utiliza para el transporte de sustancias químicas y cumple con rigurosas normativas de seguridad para prevenir derrames y contaminaciones.
+            </p>
+
+            <div class="leccion-image-container">
+                <div class="leccion-image-item">
+                    <img
+                        src="../../img/init/paletsquimicos.png"
+                        alt="Palets Químicos"
+                    />
+                    <p>
+                        <i class="fas fa-flask me-2"></i>
+                        <br />
+                        **Palet Químico:** Diseñado para la industria química, con materiales y estructuras que resisten la corrosión y el desgaste.
+                    </p>
+                </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="carga" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-weight-hanging"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Consideraciones de Peso y Posicionamiento de la Carga 
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <p>
+              La seguridad comienza con el cálculo de la carga total. Es esencial recordar que el **peso del propio palet** debe sumarse al peso de la mercancía. Ignorar el peso del palet puede llevar a exceder la capacidad nominal del montacargas, poniendo en riesgo la estabilidad del equipo y la integridad de la carga.
+            </p>
+            <p>
+              El manual subraya la importancia de una correcta manipulación de la carga, comenzando con el posicionamiento de las horquillas:
+            </p>
+            <ol>
+              <li>
+                <i class="fas fa-arrow-right me-2"></i>**Acercarse lentamente y detenerse:** Aproxima el montacargas de forma segura.
+              </li>
+              <li>
+                <i class="fas fa-arrows-alt-h me-2"></i>**Alinea las horquillas:** Asegúrate de que las horquillas estén completamente paralelas al palet antes de la inserción.
+              </li>
+              <li>
+                <i class="fas fa-plus me-2"></i>**Inserta completamente:** Desliza las horquillas hasta que la carga toque el respaldo de carga del montacargas. El manual prohíbe **empujar o forzar** la entrada. Si encuentras resistencia, detente y revisa la alineación o posibles daños en el palet.
+              </li>
+              <li>
+                <i class="fas fa-check-double me-2"></i>**Verifica la estabilidad:** Una vez insertadas, levanta la carga entre **5 y 10 cm** del suelo para confirmar que el peso está bien distribuido y la carga es estable.
+              </li>
+            </ol>
+            <p>
+              Durante el transporte, la carga debe mantenerse a una altura baja, de **10 a 20 cm del suelo**, y con el mástil inclinado hacia atrás. Esto mantiene el centro de gravedad bajo y previene el volcamiento.
+            </p>
+          </div>
+        </section>
+
+        <section id="procedimientos" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Procedimientos de Seguridad al Manejar la Carga 
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <p>
+              La operación segura de un montacargas requiere la adherencia
+              estricta a un conjunto de normas y procedimientos diseñados para
+              mitigar riesgos.
+            </p>
+            <div class="leccion-cards-mc">
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-id-card-alt"></i> La Placa de Características
+                </h4>
+                <p class="leccion-card-content-mc">
+                  Este elemento es la referencia esencial para el operador,
+                  detallando la capacidad nominal del montacargas, incluyendo el
+                  peso y el centro de carga permitidos. En ausencia de una placa
+                  legible, el equipo debe ser inmovilizado hasta su reemplazo.
+                </p>
+              </div>
+
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-ban"></i> Prohibiciones Clave
+                </h4>
+                <p class="leccion-card-content-mc">
+                  El manual es claro en sus prohibiciones para mantener la seguridad:
+                  <ul>
+                    <li>No circular, girar o inclinar las horquillas con la carga elevada.</li>
+                    <li>No transportar pasajeros.</li>
+                    <li>No usar el montacargas para fines distintos a los de su diseño.</li>
+                  </ul>
+                </p>
+              </div>
+
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-check-circle"></i> Inspección Diaria Obligatoria
+                </h4>
+                <p class="leccion-card-content-mc">
+                  Antes de cada turno, el operador debe realizar una inspección
+                  pre-operacional. Cualquier anomalía, como componentes sueltos
+                  o fallas en los frenos, debe ser reportada inmediatamente al
+                  supervisor.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="casos" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-car-crash"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Casos Prácticos con Palets y Cargas 
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <h3>
+              <i class="fas fa-warehouse me-2"></i> Caso 1: Manipulación de un palet Americano en un almacén
+            </h3>
+            <p>
+              En un almacén que maneja importaciones de Estados Unidos, un operador debe mover una carga de productos electrónicos sobre un **palet Americano (1200 x 1000 mm)**. El operador, consciente de las dimensiones, utiliza horquillas de un montacargas adaptadas a este tipo de palet. Al acercarse, se asegura de que las horquillas estén separadas a la distancia correcta y las inserta de manera uniforme. Esto evita daños en las tablas del palet y mantiene la carga centrada, lo que es vital para prevenir un vuelco lateral.
+            </p>
+            
+            <h3>
+              <i class="fas fa-truck-loading me-2"></i> Caso 2: Carga de un camión con Europalets
+            </h3>
+            <p>
+              Un transportista necesita cargar un camión con mercancía para exportar a Europa. Los productos vienen sobre **Europalets (1200 x 800 mm)**, ya que estos encajan perfectamente, optimizando el espacio en el remolque. El operador del montacargas debe levantar los palets, asegurándose de que la carga esté estable y el mástil inclinado hacia atrás. La precisión es clave para evitar daños en los productos o en las paredes del camión, ya que estos palets están diseñados para una logística de alta densidad.
+            </p>
+            
+            <h3>
+              <i class="fas fa-vial me-2"></i> Caso 3: Manejo de un palet Químico
+            </h3>
+            <p>
+              En una planta de producción, se debe mover un barril con un producto químico sensible. Este barril está asegurado sobre un **palet Químico** para garantizar la máxima seguridad. El operador, además de seguir todos los procedimientos del manual, se asegura de que el peso total (barril + palet) no exceda la capacidad. La rigidez y el diseño del palet químico, hecho para resistir sustancias corrosivas, son un factor crítico para prevenir accidentes y derrames que podrían causar graves lesiones o contaminación.
+            </p>
+          </div>
+        </section>
+
+        <section class="leccion-section-mc">
+          <button class="btn-signup-mc mt-4">
+            <i class="fas fa-arrow-alt-circle-left me-2"></i>
+            <a href="../lecciones/estructura.html"
+              >Regresar a la lección anterior</a
+            >
+          </button>
+
+          <button class="btn-signup-mc mt-4">
+            <i class="fas fa-arrow-alt-circle-right me-2"></i>
+            <a href="../lecciones/componenteMontacargas.html"
+              >Ver Siguiente lección</a
+            >
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <div class="whatsapp-btn-mc whatsapp-btn-improved-mc">
+      <a
+        href="https://wa.me/584125425095?text=Hola,%20me%20interesan%20sus%20cursos"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-link-mc"
+        aria-label="Contactar por WhatsApp"
+      >
+        <i class="fab fa-whatsapp whatsapp-icon-mc"></i>
+        <span class="whatsapp-tooltip-mc">
+          ¿Necesitas ayuda?<br />
+          <small>+58 412-5425095</small>
+        </span>
+      </a>
+    </div>
+    <footer class="footer-mc">
+      <div class="footer-container-mc">
+        <div class="footer-top-mc">
+          <div class="footer-brand-mc">
+            <img
+              src="../../img/init/logoProvi.jpeg"
+              alt="Logo"
+              class="footer-logo-mc"
+            />
+            <p class="footer-description-mc">
+              Plataforma especializada en formación técnica y tecnológica para
+              el desarrollo profesional.
+            </p>
+            <div class="footer-social-mc">
+              <a href="#" class="social-link-mc" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Enlaces rápidos</h3>
+            <ul class="footer-links-mc">
+              <li><a href="/index.html" class="footer-link-mc">Inicio</a></li>
+              <li>
+                <a href="../cursos.html" class="footer-link-mc">Cursos</a>
+              </li>
+              <li>
+                <a href="../precios.html" class="footer-link-mc">Precios</a>
+              </li>
+              <li>
+                <a href="../contacto.html" class="footer-link-mc">Contacto</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Categorías</h3>
+            <ul class="footer-links-mc">
+              <li>
+                <a href="../proximo.html" class="footer-link-mc">Electrónica</a>
+              </li>
+              <li>
+                <a href="../montacargas/manejo.html" class="footer-link-mc"
+                  >Montacargas</a
+                >
+              </li>
+              <li>
+                <a href="../proximo.html" class="footer-link-mc"
+                  >Programación</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-divider-mc"></div>
+
+        <div class="footer-bottom-mc">
+          <div class="footer-copyright-mc">
+            &copy; 2023 Plataforma de Cursos. Todos los derechos reservados.
+          </div>
+          <div class="footer-legal-mc">
+            <a href="#" class="footer-legal-link-mc">Términos de servicio</a>
+            <a href="#" class="footer-legal-link-mc">Política de privacidad</a>
+            <a href="#" class="footer-legal-link-mc">Aviso legal</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Esperar a que el DOM esté completamente cargado
+      document.addEventListener("DOMContentLoaded", function () {
+        // ========== FILTROS DE CURSOS ==========
+        const filterButtons = document.querySelectorAll(".filter-btn-mc");
+        const courseCards = document.querySelectorAll(".course-card-mc");
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remover clase active de todos los botones
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            // Agregar clase active al botón clickeado
+            this.classList.add("active");
+
+            const filterValue = this.textContent.trim();
+
+            // Filtrar cursos
+            courseCards.forEach((card) => {
+              if (filterValue === "Todos") {
+                card.style.display = "flex";
+              } else {
+                const categoryText = card.querySelector(
+                  ".course"
+                );
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

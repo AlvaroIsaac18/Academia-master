@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Bootstrap CSS (solo para otros componentes) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CDN para particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/cursos.css" />
+    <style>
+      /* ========== ESTILOS GENERALES ========== */
+      .leccion-page-mc {
+        background-color: #f8f9fa;
+        min-height: 100vh;
+        padding: 2rem 0;
+      }
+
+      .leccion-container-mc {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* ========== HEADER DE PÁGINA ========== */
+      .leccion-header-mc {
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .leccion-title-mc {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #13161c;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .leccion-subtitle-mc {
+        font-size: 1.2rem;
+        color: #6c757d;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        line-height: 1.6;
+      }
+
+      /* ========== NAVEGACIÓN INTERNA ========== */
+      .leccion-nav-mc {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 3rem;
+      }
+
+      .leccion-nav-link-mc {
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        padding: 12px 25px;
+        border-radius: 30px;
+        color: #6c757d;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .leccion-nav-link-mc:hover {
+        background: #e9ecef;
+        color: #13161c;
+      }
+
+      .leccion-nav-link-mc.active {
+        background: #98ca3f;
+        color: #13161c;
+        border-color: #98ca3f;
+      }
+
+      /* ========== SECCIONES DE CONTENIDO ========== */
+      .leccion-section-mc {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .leccion-section-header-mc {
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .leccion-section-icon-mc {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #0b335b, #1a1a2e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      .leccion-section-title-mc {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #13161c;
+        margin: 0;
+      }
+
+      .leccion-section-content-mc {
+        line-height: 1.7;
+        color: #6c757d;
+      }
+
+      .leccion-section-content-mc p {
+        margin-bottom: 20px;
+      }
+
+      /* ========== TARJETAS DE INFORMACIÓN ========== */
+      .leccion-cards-mc {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+      }
+
+      .leccion-card-mc {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 25px;
+        border-left: 4px solid #98ca3f;
+      }
+
+      .leccion-card-title-mc {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #13161c;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .leccion-card-content-mc {
+        color: #6c757d;
+        line-height: 1.6;
+      }
+
+      /* ========== COMPARATIVAS ========== */
+      .leccion-table-mc {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .leccion-table-mc th,
+      .leccion-table-mc td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .leccion-table-mc th {
+        background: linear-gradient(135deg, #0b335b, #1a1a2e);
+        color: white;
+        font-weight: 600;
+      }
+
+      .leccion-table-mc tr:last-child td {
+        border-bottom: none;
+      }
+
+      .leccion-table-mc tr:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 768px) {
+        .leccion-title-mc {
+          font-size: 2.2rem;
+        }
+
+        .leccion-nav-mc {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .leccion-cards-mc {
+          grid-template-columns: 1fr;
+        }
+
+        .leccion-table-mc {
+          display: block;
+          overflow-x: auto;
+        }
+
+        .leccion-section-header-mc {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .leccion-title-mc {
+          font-size: 1.8rem;
+        }
+
+        .leccion-section-mc {
+          padding: 20px;
+        }
+
+        .leccion-section-title-mc {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar-mc animate__animated animate__fadeInDown">
+      <div class="navbar-container-mc">
+        <!-- Logo/Marca -->
+        <a href="#" class="navbar-brand-mc">
+          <img src="../../img/init/logoProvi.jpeg" alt="Logo" />
+        </a>
+
+        <!-- Menú principal -->
+        <ul class="navbar-menu-mc">
+          <li class="navbar-item-mc">
+            <a href="/index.html" class="navbar-link-mc"
+              ><i class="fas fa-home me-2"></i>Inicio</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../cursos.html" class="navbar-link-mc"
+              ><i class="fas fa-graduation-cap me-2"></i>Cursos</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../precios.html" class="navbar-link-mc"
+              ><i class="fas fa-tags me-2"></i>Precios</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../contacto.html" class="navbar-link-mc"
+              ><i class="fas fa-envelope me-2"></i>Contacto</a
+            >
+          </li>
+        </ul>
+
+        <!-- Acciones (buscar, botones) -->
+        <div class="navbar-actions-mc">
+          <div class="navbar-search-mc">
+            <i class="fas fa-search search-icon-mc"></i>
+            <input
+              type="text"
+              class="search-input-mc"
+              placeholder="Buscar..."
+            />
+          </div>
+          <button class="btn-login-mc">
+            <i class="fas fa-sign-in-alt me-2"></i
+            ><a href="../proximo.html"> Iniciar sesión</a>
+          </button>
+          <button class="btn-signup-mc">
+            <i class="fas fa-user-plus me-2"></i>
+            <a href="../proximo.html">Regístrate</a>
+          </button>
+        </div>
+
+        <!-- Botón toggle para móvil -->
+        <button class="navbar-toggle-mc" id="navbarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Menú móvil -->
+      <div class="mobile-menu-mc" id="mobileMenu">
+        <ul>
+          <li class="mobile-menu-item-mc">
+            <a href="/index.html" class="mobile-menu-link-mc">Inicio</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../cursos.html" class="mobile-menu-link-mc">Cursos</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="./contacto.html" class="mobile-menu-link-mc">Contacto</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="./precios.html" class="mobile-menu-link-mc">Precios</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="leccion-page-mc">
+      <div class="leccion-container-mc">
+        <!-- Header de la página -->
+        <header class="leccion-header-mc">
+          <h1 class="leccion-title-mc">
+            Componentes de los Montacargas Industriales
+          </h1>
+          <p class="leccion-subtitle-mc">
+            Para operar un montacargas de manera segura y eficiente, es crucial
+            conocer sus partes y especificaciones. A continuación, exploraremos
+            en detalle los componentes que lo forman, desde los elementos de
+            seguridad diseñados para proteger al operador, hasta las
+            características técnicas que definen su capacidad y funcionamiento.
+          </p>
+
+          <!-- Navegación interna -->
+          <nav class="leccion-nav-mc">
+            <a href="#tipos" class="leccion-nav-link-mc active">
+              <i class="fas fa-list"></i> Principales
+            </a>
+            <a href="#Horquillas" class="leccion-nav-link-mc">
+              <i class="fas fa-shield-alt"></i> Horquillas
+            </a>
+
+            <a href="#seguridad" class="leccion-nav-link-mc">
+              <i class="fas fa-shield-alt"></i> Seguridad
+            </a>
+          </nav>
+        </header>
+
+        <!-- Sección 1: Tipos de Montacargas -->
+        <section id="tipos" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-list"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Componentes principales de los montacargas
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <div class="leccion-image-container-mc">
+              <img
+                src="../../img/init/dibujoMontacargas.jpg"
+                alt="Montacargas eléctrico"
+                class="leccion-image-mc"
+              />
+            </div>
+
+            <p>
+              Para dominar el manejo de un montacargas, no basta con saber
+              conducirlo; es crucial entender la anatomía de la máquina. Cada
+              componente, desde el mástil hasta los sistemas de seguridad, juega
+              un papel vital en la eficiencia y la protección del operador. A
+              continuación, te presentamos las partes esenciales del montacargas
+              y la función específica de cada una.
+            </p>
+
+            <h3>Partes Externas y de Operación</h3>
+            <ol>
+              <li class="mt-3">
+                Horquillas: Barras metálicas para levantar las cargas.
+              </li>
+              <li class="mt-3">
+                Mástil: Sistema mecánico que se usa para levantar la carga.
+              </li>
+              <li class="mt-3">
+                Asiento regulable anatómico: Asiento diseñado para la comodidad
+                del operador.
+              </li>
+              <li class="mt-3">
+                Volante de dirección: Para controlar el movimiento del
+                montacargas.
+              </li>
+              <li class="mt-3">Pedal del acelerador: Controla la velocidad.</li>
+              <li class="mt-3">
+                Pedal de freno del servicio: Detiene el equipo.
+              </li>
+              <li class="mt-3">
+                Palancas hidráulicas: Se usan para la elevación de las
+                horquillas.
+              </li>
+              <li class="mt-3">
+                Servodirección: Asistencia en la dirección para mayor control.
+              </li>
+              <li class="mt-3">
+                Retrovisores: Espejos que ayudan a ver los alrededores.
+              </li>
+            </ol>
+
+            <h3 id="seguridad">Componentes de Seguridad</h3>
+            <ol>
+              <li class="mt-3">
+                Respaldo de carga: Evita que las partes sueltas de la carga
+                caigan sobre el operador.
+              </li>
+              <li class="mt-3">
+                Techo protector: Ofrece protección contra la caída de objetos,
+                aunque no protege de todos los posibles impactos.
+              </li>
+              <li class="mt-3">
+                Cinturón de seguridad: Mantiene al operador en el asiento en
+                caso de choque o volcamiento, evitando que salga despedido.
+              </li>
+              <li class="mt-3">
+                Superficie antideslizante: Una superficie especial para subir al
+                equipo que ayuda a evitar resbalones.
+              </li>
+              <li class="mt-3">Extintor: Para casos de incendio.</li>
+              <li class="mt-3">
+                Bocina: Se utiliza para alertar a los peatones y otros
+                trabajadores sobre la presencia del montacargas.
+              </li>
+              <li class="mt-3">
+                Placa de características: Un documento vital que muestra la
+                capacidad de carga del montacargas en kilogramos y el centro de
+                carga en milímetros.
+              </li>
+            </ol>
+
+            <h3 id="Horquillas">Horquillas</h3>
+            <p>
+              Las horquillas, también llamadas uñas, son las barras metálicas de
+              gran rigidez que se utilizan para levantar, transportar y apilar
+              cargas. Su función principal es manipular los materiales de manera
+              segura y eficiente.
+            </p>
+
+            <p>
+              Para un manejo adecuado, el manual enfatiza varias reglas clave de
+              seguridad:
+            </p>
+            <ol>
+              <li class="mt-3">
+                Al circular con una carga, las horquillas deben estar elevadas
+                solo entre 10 y 20 cm del suelo.
+              </li>
+              <li class="mt-3">
+                Está prohibido manejar el equipo con las horquillas inclinadas
+                hacia adelante o a una altura superior a los 30 cm del piso
+                mientras está en movimiento.
+              </li>
+              <li class="mt-3">
+                Las horquillas no deben usarse como palanca para levantar
+                objetos pesados.
+              </li>
+              <li class="mt-3">
+                Por ninguna circunstancia se debe transportar personas sobre
+                ellas.
+              </li>
+            </ol>
+
+            <div class="leccion-image-container-mc">
+              <img
+                src="../../img/init/DetallesCuchillas.png"
+                alt="Montacargas eléctrico"
+                class="leccion-image-mc"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección 2: Normas de Seguridad -->
+        <section id="seguridad" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Imagenes de las partes de un montacargas
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="../../img/init/partesMontacargas.png"
+                    class="leccion-img-carrusel-mc"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../../img/init/parteDetalladas.png"
+                    class="leccion-img-carrusel-mc"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../../img/init/cuchillas.png"
+                    class="leccion-img-carrusel-mc"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <!--  
+                <div class="leccion-section-content-mc">
+                    <p>La operación segura de montacargas es fundamental para prevenir accidentes y lesiones en el
+                        entorno industrial. Siga estas normas esenciales para garantizar un ambiente de trabajo seguro.
+                    </p>
+
+                    <div class="leccion-cards-mc">
+                        <div class="leccion-card-mc">
+                            <h3 class="leccion-card-title-mc">
+                                <i class="fas fa-user-check"></i> Operadores Capacitados
+                            </h3>
+                            <div class="leccion-card-content-mc">
+                                <p>Solo personal debidamente entrenado y certificado debe operar montacargas. La
+                                    capacitación debe incluir:</p>
+                                <ul>
+                                    <li>Manejo del equipo</li>
+                                    <li>Procedimientos de carga/descarga</li>
+                                    <li>Protocolos de emergencia</li>
+                                    <li>Inspecciones preoperacionales</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="leccion-card-mc">
+                            <h3 class="leccion-card-title-mc">
+                                <i class="fas fa-clipboard-check"></i> Inspecciones Diarias
+                            </h3>
+                            <div class="leccion-card-content-mc">
+                                <p>Realice inspecciones visuales y funcionales antes de cada turno. Verifique:</p>
+                                <ul>
+                                    <li>Frenos y sistema hidráulico</li>
+                                    <li>Niveles de fluidos</li>
+                                    <li>Neumáticos y dirección</li>
+                                    <li>Sistemas de seguridad</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="leccion-card-mc">
+                            <h3 class="leccion-card-title-mc">
+                                <i class="fas fa-exclamation-triangle"></i> Prevención de Accidentes
+                            </h3>
+                            <div class="leccion-card-content-mc">
+                                <p>Mantenga prácticas seguras durante la operación:</p>
+                                <ul>
+                                    <li>Maneje a velocidades seguras</li>
+                                    <li>Mantenga la carga baja al transportar</li>
+                                    <li>Use el cinturón de seguridad</li>
+                                    <li>Esté atento a peatones y obstáculos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                -->
+
+          <button class="btn-signup-mc mt-4">
+            <i class="fas fa-arrow-alt-circle-left me-2"></i>
+            <a href="../lecciones/origenMontacarga.html"
+              >Regresar a la leccion anterior
+            </a>
+          </button>
+
+          <button class="btn-signup-mc mt-4">
+            <i class="fas fa-arrow-alt-circle-right me-2"></i>
+            <a href="../lecciones/Reviciones.html">Ver Siguente leccion</a>
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <!-- Botón WhatsApp mejorado -->
+    <div class="whatsapp-btn-mc whatsapp-btn-improved-mc">
+      <a
+        href="https://wa.me/584125425095?text=Hola,%20me%20interesan%20sus%20cursos"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-link-mc"
+        aria-label="Contactar por WhatsApp"
+      >
+        <i class="fab fa-whatsapp whatsapp-icon-mc"></i>
+        <span class="whatsapp-tooltip-mc">
+          ¿Necesitas ayuda?<br />
+          <small>+58 412-5425095</small>
+        </span>
+      </a>
+    </div>
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer-mc">
+      <div class="footer-container-mc">
+        <!-- Sección superior del footer -->
+        <div class="footer-top-mc">
+          <!-- Columna 1: Logo y descripción -->
+          <div class="footer-brand-mc">
+            <img
+              src="../../img/init/logoProvi.jpeg"
+              alt="Logo"
+              class="footer-logo-mc"
+            />
+            <p class="footer-description-mc">
+              Plataforma especializada en formación técnica y tecnológica para
+              el desarrollo profesional.
+            </p>
+            <div class="footer-social-mc">
+              <a href="#" class="social-link-mc" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna 2: Enlaces rápidos -->
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Enlaces rápidos</h3>
+            <ul class="footer-links-mc">
+              <li><a href="/index.html" class="footer-link-mc">Inicio</a></li>
+              <li>
+                <a href="../cursos.html" class="footer-link-mc">Cursos</a>
+              </li>
+              <li>
+                <a href="../precios.html" class="footer-link-mc">Precios</a>
+              </li>
+              <li>
+                <a href="../contacto.html" class="footer-link-mc">Contacto</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Categorías -->
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Categorías</h3>
+            <ul class="footer-links-mc">
+              <li>
+                <a href="../proximo.html" class="footer-link-mc">Electrónica</a>
+              </li>
+              <li>
+                <a href="../montacargas/manejo.html" class="footer-link-mc"
+                  >Montacargas</a
+                >
+              </li>
+              <li>
+                <a href="../proximo.html" class="footer-link-mc"
+                  >Programación</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Línea divisoria -->
+        <div class="footer-divider-mc"></div>
+
+        <!-- Sección inferior del footer -->
+        <div class="footer-bottom-mc">
+          <div class="footer-copyright-mc">
+            &copy; 2023 Plataforma de Cursos. Todos los derechos reservados.
+          </div>
+          <div class="footer-legal-mc">
+            <a href="#" class="footer-legal-link-mc">Términos de servicio</a>
+            <a href="#" class="footer-legal-link-mc">Política de privacidad</a>
+            <a href="#" class="footer-legal-link-mc">Aviso legal</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Esperar a que el DOM esté completamente cargado
+      document.addEventListener("DOMContentLoaded", function () {
+        // ========== FILTROS DE CURSOS ==========
+        const filterButtons = document.querySelectorAll(".filter-btn-mc");
+        const courseCards = document.querySelectorAll(".course-card-mc");
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remover clase active de todos los botones
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            // Agregar clase active al botón clickeado
+            this.classList.add("active");
+
+            const filterValue = this.textContent.trim();
+
+            // Filtrar cursos
+            courseCards.forEach((card) => {
+              if (filterValue === "Todos") {
+                card.style.display = "flex";
+              } else {
+                const categoryText = card.querySelector(
+                  ".course-category-mc"
+                ).textContent;
+                // Verificar si la categoría contiene el filtro (case insensitive)
+                if (
+                  categoryText.toLowerCase().includes(filterValue.toLowerCase())
+                ) {
+                  card.style.display = "flex";
+                } else {
+                  card.style.display = "none";
+                }
+              }
+            });
+          });
+        });
+
+        // ========== FUNCIONALIDAD BÁSICA PARA LA PAGINACIÓN ==========
+        document.querySelectorAll(".pagination-btn-mc").forEach((button) => {
+          button.addEventListener("click", function () {
+            document.querySelectorAll(".pagination-btn-mc").forEach((btn) => {
+              btn.classList.remove("active");
+            });
+            this.classList.add("active");
+          });
+        });
+
+        // ========== NAVBAR TOGGLE PARA MÓVIL ==========
+        const navbarToggle = document.getElementById("navbarToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        // Alternar menú móvil al hacer clic
+        navbarToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("active");
+          // Cambiar icono del botón (bars/times)
+          const icon = this.querySelector("i");
+          if (mobileMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+        // Cerrar menú al hacer clic en un enlace (para móviles)
+        const mobileLinks = document.querySelectorAll(".mobile-menu-link-mc");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.remove("active");
+            navbarToggle.querySelector("i").classList.remove("fa-times");
+            navbarToggle.querySelector("i").classList.add("fa-bars");
+          });
+        });
+
+        // ========== EFECTO DE SCROLL EN NAVBAR ==========
+        window.addEventListener("scroll", function () {
+          const navbar = document.querySelector(".navbar-mc");
+          if (window.scrollY > 10) {
+            navbar.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+          } else {
+            navbar.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+          }
+        });
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

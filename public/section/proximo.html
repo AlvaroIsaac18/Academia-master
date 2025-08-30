@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Próximamente</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .proximamente-container-mc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 15px;
+        margin: 2rem auto;
+        max-width: 800px;
+      }
+
+      .proximamente-icono-mc {
+        font-size: 4rem;
+        color: #98ca3f;
+        margin-bottom: 1.5rem;
+        animation: pulse 2s infinite;
+      }
+
+      .proximamente-titulo-mc {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #13161c;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #0b335b, #1a1a2e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .proximamente-texto-mc {
+        font-size: 1.2rem;
+        color: #6c757d;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        max-width: 500px;
+      }
+
+      .proximamente-btn-mc {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 30px;
+        background: linear-gradient(135deg, #0b335b, #1a1a2e);
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+      }
+
+      .proximamente-btn-mc:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(11, 51, 91, 0.3);
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .proximamente-titulo-mc {
+          font-size: 2rem;
+        }
+
+        .proximamente-texto-mc {
+          font-size: 1.1rem;
+        }
+
+        .proximamente-btn-mc {
+          padding: 12px 25px;
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="proximamente-container-mc">
+      <div class="proximamente-icono-mc">
+        <i class="fas fa-clock"></i>
+      </div>
+
+      <h1 class="proximamente-titulo-mc">¡Próximamente!</h1>
+
+      <p class="proximamente-texto-mc">
+        Estamos trabajando en este contenido para brindarte la mejor experiencia
+        de aprendizaje. Mientras tanto, no te pierdas nuestro curso disponible.
+      </p>
+
+      <a href="./montacargas/manejo.html" class="proximamente-btn-mc">
+        <i class="fas fa-play-circle"></i>
+        Ver Curso Disponible
+      </a>
+    </div>
+  </body>
+</html>

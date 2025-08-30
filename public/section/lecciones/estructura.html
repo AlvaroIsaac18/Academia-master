@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/cursos.css" />
+    <style>
+      /* ========== ESTILOS GENERALES ========== */
+      .leccion-page-mc {
+        background-color: #f8f9fa;
+        min-height: 100vh;
+        padding: 2rem 0;
+      }
+
+      .leccion-container-mc {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* ========== HEADER DE PÁGINA ========== */
+      .leccion-header-mc {
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .leccion-title-mc {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #13161c;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .leccion-subtitle-mc {
+        font-size: 1.2rem;
+        color: #6c757d;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        line-height: 1.6;
+      }
+
+      /* ========== NAVEGACIÓN INTERNA ========== */
+      .leccion-nav-mc {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 3rem;
+      }
+
+      .leccion-nav-link-mc {
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        padding: 12px 25px;
+        border-radius: 30px;
+        color: #6c757d;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .leccion-nav-link-mc:hover {
+        background: #e9ecef;
+        color: #13161c;
+      }
+
+      .leccion-nav-link-mc.active {
+        background: #98ca3f;
+        color: #13161c;
+        border-color: #98ca3f;
+      }
+
+      /* ========== SECCIONES DE CONTENIDO ========== */
+      .leccion-section-mc {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .leccion-section-header-mc {
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .leccion-section-icon-mc {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #0b335b, #1a1a2e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      .leccion-section-title-mc {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #13161c;
+        margin: 0;
+      }
+
+      .leccion-section-content-mc {
+        line-height: 1.7;
+        color: #6c757d;
+      }
+
+      .leccion-section-content-mc p {
+        margin-bottom: 20px;
+      }
+
+      /* ========== TARJETAS DE INFORMACIÓN ========== */
+      .leccion-cards-mc {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+      }
+
+      .leccion-card-mc {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 25px;
+        border-left: 4px solid #98ca3f;
+      }
+
+      .leccion-card-title-mc {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #13161c;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .leccion-card-content-mc {
+        color: #6c757d;
+        line-height: 1.6;
+      }
+
+      /* ========== COMPARATIVAS ========== */
+      .leccion-table-mc {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .leccion-table-mc th,
+      .leccion-table-mc td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .leccion-table-mc th {
+        background: linear-gradient(135deg, #0b335b, #1a1a2e);
+        color: white;
+        font-weight: 600;
+      }
+
+      .leccion-table-mc tr:last-child td {
+        border-bottom: none;
+      }
+
+      .leccion-table-mc tr:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+
+      /* Estilos para las imágenes */
+      .leccion-image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .leccion-image-item {
+        flex: 1 1 45%; /* Permite 2 imágenes por fila en pantallas grandes */
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .leccion-image-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .leccion-image-item p {
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: #555;
+      }
+
+      @media (max-width: 768px) {
+        .leccion-image-item {
+          flex: 1 1 100%; /* Una imagen por fila en pantallas pequeñas */
+        }
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 768px) {
+        .leccion-title-mc {
+          font-size: 2.2rem;
+        }
+
+        .leccion-nav-mc {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .leccion-cards-mc {
+          grid-template-columns: 1fr;
+        }
+
+        .leccion-table-mc {
+          display: block;
+          overflow-x: auto;
+        }
+
+        .leccion-section-header-mc {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .leccion-title-mc {
+          font-size: 1.8rem;
+        }
+
+        .leccion-section-mc {
+          padding: 20px;
+        }
+
+        .leccion-section-title-mc {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar-mc animate__animated animate__fadeInDown">
+      <div class="navbar-container-mc">
+        <a href="#" class="navbar-brand-mc">
+          <img src="../../img/init/logoProvi.jpeg" alt="Logo" />
+        </a>
+
+        <ul class="navbar-menu-mc">
+          <li class="navbar-item-mc">
+            <a href="/index.html" class="navbar-link-mc"
+              ><i class="fas fa-home me-2"></i>Inicio</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../cursos.html" class="navbar-link-mc"
+              ><i class="fas fa-graduation-cap me-2"></i>Cursos</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../precios.html" class="navbar-link-mc"
+              ><i class="fas fa-tags me-2"></i>Precios</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../contacto.html" class="navbar-link-mc"
+              ><i class="fas fa-envelope me-2"></i>Contacto</a
+            >
+          </li>
+        </ul>
+
+        <div class="navbar-actions-mc">
+          <div class="navbar-search-mc">
+            <i class="fas fa-search search-icon-mc"></i>
+            <input
+              type="text"
+              class="search-input-mc"
+              placeholder="Buscar..."
+            />
+          </div>
+          <button class="btn-login-mc">
+            <i class="fas fa-sign-in-alt me-2"></i
+            ><a href="../proximo.html"> Iniciar sesión</a>
+          </button>
+          <button class="btn-signup-mc">
+            <i class="fas fa-user-plus me-2"></i>
+            <a href="../proximo.html">Regístrate</a>
+          </button>
+        </div>
+
+        <button class="navbar-toggle-mc" id="navbarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="mobile-menu-mc" id="mobileMenu">
+        <ul>
+          <li class="mobile-menu-item-mc">
+            <a href="/index.html" class="mobile-menu-link-mc">Inicio</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../cursos.html" class="mobile-menu-link-mc">Cursos</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../contacto.html" class="mobile-menu-link-mc">Contacto</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../precios.html" class="mobile-menu-link-mc">Precios</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="leccion-page-mc">
+      <div class="leccion-container-mc">
+        <header class="leccion-header-mc">
+          <h1 class="leccion-title-mc">
+            Seguridad Operacional del Montacargas: Estabilidad, Carga y Centro
+            de Gravedad
+          </h1>
+          <p class="leccion-subtitle-mc">
+            La operación segura de un montacargas es una tarea crítica que
+            demanda una comprensión profunda de los principios de estabilidad,
+            la gestión de la carga y el mantenimiento de un centro de gravedad
+            adecuado. Este módulo técnico explora las consideraciones
+            fundamentales para prevenir incidentes y garantizar la eficiencia
+            operativa, enfatizando la correlación entre la capacidad del equipo,
+            la manipulación de materiales y la seguridad del operador.
+          </p>
+
+          <nav class="leccion-nav-mc">
+            <a href="#estabilidad" class="leccion-nav-link-mc active">
+              <i class="fas fa-balance-scale"></i> Estabilidad y Centro de
+              Gravedad
+            </a>
+            <a href="#carga" class="leccion-nav-link-mc">
+              <i class="fas fa-box"></i> Gestión de la Carga
+            </a>
+            <a href="#procedimientos" class="leccion-nav-link-mc">
+              <i class="fas fa-clipboard-check"></i> Procedimientos de Seguridad
+            </a>
+            <a href="#casos" class="leccion-nav-link-mc">
+              <i class="fas fa-exclamation-triangle"></i> Casos Prácticos
+            </a>
+          </nav>
+        </header>
+
+        <section id="estabilidad" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Principios de Estabilidad y Centro de Gravedad
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <p>
+              La **estabilidad** de un montacargas es un factor determinante
+              para la prevención de vuelcos y accidentes. Esta estabilidad se
+              define por la ubicación del **centro de gravedad combinado
+              (CGC)**, que es el punto de equilibrio resultante de la masa del
+              montacargas y la carga que transporta. Para una operación segura,
+              el CGC debe mantenerse siempre dentro del **margen de
+              estabilidad**, un área triangular o trapezoidal definida por los
+              puntos de apoyo del equipo (las ruedas).
+            </p>
+            <p>
+              Cualquier alteración en la posición de la carga o en la
+              inclinación del mástil puede desplazar el CGC, comprometiendo la
+              estabilidad y aumentando significativamente el riesgo de un
+              volcamiento. A continuación, se ilustran estos principios:
+            </p>
+
+            <div class="leccion-image-container">
+              <div class="leccion-image-item">
+                <img
+                  src="../../img/init/carga2.png"
+                  alt="Estabilidad Montacargas A y B"
+                />
+                <p>
+                  <i class="fas fa-chart-bar me-2"></i>
+                  <br />
+                  **Figuras A y B:** La Figura A muestra una carga estable,
+                  cerca del respaldo y baja. La Figura B ilustra la pérdida de
+                  estabilidad al elevar la carga e inclinar el mástil,
+                  desplazando el CGC.
+                </p>
+              </div>
+              <div class="leccion-image-item">
+                <img
+                  src="../../img/init/carga1.png"
+                  alt="Estabilidad Montacargas C y D"
+                />
+                <p>
+                  <i class="fas fa-chart-line me-2"></i>
+                  <br />
+                  **Figuras C y D:** Similar a las anteriores, la Figura C
+                  presenta una operación estable. La Figura D evidencia una
+                  configuración inestable con la carga elevada y distanciada, lo
+                  que resulta en un desplazamiento crítico del CGC.
+                </p>
+              </div>
+            </div>
+            <p>
+              Es imperativo que el operador comprenda que la elevación y el
+              posicionamiento inadecuado de la carga, especialmente durante el
+              giro o el desplazamiento, pueden trasladar el CGC fuera del margen
+              de estabilidad, conduciendo a un vuelco lateral o frontal. El
+              manual enfatiza que el cinturón de seguridad es vital en estos
+              casos para evitar que el operador sea aplastado.
+            </p>
+          </div>
+        </section>
+
+        <section id="carga" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-box"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Gestión de la Carga: Capacidad Nominal y Centro de Carga
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <p>
+              La operación efectiva y segura de un montacargas está
+              intrínsecamente ligada a la correcta gestión de la carga, lo cual
+              se rige por la **capacidad nominal** del equipo. Esta capacidad se
+              especifica en la **placa de características** del montacargas, la
+              cual detalla el peso máximo que puede ser elevado y el **centro de
+              carga** asociado. El centro de carga es la distancia horizontal
+              desde la parte frontal de las horquillas hasta el centro de
+              gravedad de la carga.
+            </p>
+            <p>
+              La siguiente imagen ilustra cómo la distancia del centro de carga
+              influye directamente en la capacidad de elevación del montacargas:
+            </p>
+            <div class="leccion-image-container">
+              <div class="leccion-image-item" style="flex: 1 1 100%">
+                <img
+                  src="../../img/init/carga3.png"
+                  alt="Relación entre Carga y Distancia"
+                />
+                <p>
+                  <i class="fas fa-weight-hanging me-2"></i>
+                  <br />
+                  **Figura 3:** Muestra cómo un peso menor (3000 lbs/1369 kg)
+                  puede ser manejado con un centro de carga más alejado (24
+                  pulgadas/60 cm), mientras que una carga más pesada (4000
+                  lbs/1912 kg) requiere un centro de carga más cercano (36
+                  pulgadas/91 cm) para mantener la estabilidad.
+                </p>
+              </div>
+            </div>
+            <p>
+              Como se observa, la capacidad de elevación disminuye a medida que
+              el centro de carga se aleja de las horquillas. Exceder los límites
+              de peso o centro de carga indicados en la placa puede provocar que
+              las ruedas traseras se levanten, resultando en una pérdida de
+              control de la dirección y un riesgo inminente de vuelco. Por lo
+              tanto, es fundamental:
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle me-2"></i>Verificar siempre la
+                placa de características antes de manipular cualquier carga.
+              </li>
+              <li>
+                <i class="fas fa-check-circle me-2"></i>Posicionar la carga lo
+                más cerca posible del respaldo de carga.
+              </li>
+              <li>
+                <i class="fas fa-check-circle me-2"></i>Asegurar que la carga
+                esté correctamente equilibrada en las horquillas.
+              </li>
+              <li>
+                <i class="fas fa-check-circle me-2"></i>No exceder la capacidad
+                nominal bajo ninguna circunstancia.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="procedimientos" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Medidas y Procedimientos de Seguridad
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <p>
+              La operación segura de un montacargas requiere la adherencia
+              estricta a un conjunto de normas y procedimientos diseñados para
+              mitigar riesgos. Esto incluye el uso adecuado del **Equipo de
+              Protección Personal (EPP)** y el seguimiento de protocolos
+              operativos rigurosos.
+            </p>
+            <div class="leccion-cards-mc">
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-id-card-alt"></i> La Placa de Características
+                </h4>
+                <p class="leccion-card-content-mc">
+                  Este elemento es la referencia esencial para el operador,
+                  detallando la capacidad nominal del montacargas, incluyendo el
+                  peso y el centro de carga permitidos. En ausencia de una placa
+                  legible, el equipo debe ser inmovilizado hasta su reemplazo.
+                  Las etiquetas de seguridad son complementarias para informar
+                  sobre las capacidades y limitaciones operativas.
+                </p>
+              </div>
+
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-tachometer-alt"></i> Control de Velocidad
+                </h4>
+                <p class="leccion-card-content-mc">
+                  La velocidad de operación no debe exceder los 10 km/h, y
+                  siempre debe ajustarse a las condiciones del entorno, ya sea
+                  con carga o sin ella. El operador debe ser capaz de detener el
+                  montacargas de forma segura en cualquier momento.
+                </p>
+              </div>
+
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-user-slash"></i> Prohibición de Pasajeros
+                </h4>
+                <p class="leccion-card-content-mc">
+                  Está terminantemente prohibido el transporte de personas en el
+                  montacargas. Este equipo está diseñado exclusivamente para la
+                  manipulación de cargas, y el transporte de pasajeros
+                  constituye un riesgo severo de caídas o aplastamiento.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              Adicionalmente, se subraya la importancia de una **inspección
+              diaria** pre-operacional del equipo. Cualquier anomalía, como
+              componentes sueltos o fugas de fluidos, debe ser reportada
+              inmediatamente al supervisor y el montacargas debe ser puesto
+              fuera de servicio hasta que se realicen las reparaciones
+              necesarias. Es esencial verificar el correcto funcionamiento de
+              todos los sistemas, especialmente los frenos, antes de iniciar las
+              operaciones.
+            </p>
+          </div>
+        </section>
+
+        <section id="casos" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-car-crash"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Casos Prácticos y Gestión de Emergencias
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <h3>
+              <i class="fas fa-ambulance me-2"></i>Análisis de Escenario:
+              Volcamiento del Montacargas
+            </h3>
+            <p>
+              El volcamiento representa uno de los eventos más críticos en la
+              operación de montacargas. Contrario al instinto, la acción más
+              peligrosa es intentar saltar del equipo. El protocolo de seguridad
+              exige que el operador permanezca en la cabina y se prepare para el
+              impacto.
+            </p>
+            <p>
+              <strong
+                ><i class="fas fa-exclamation me-2"></i>Protocolo en caso de
+                volcamiento lateral:</strong
+              >
+            </p>
+            <ol>
+              <li>
+                <i class="fas fa-crosshairs me-2"></i>Mantenerse dentro del
+                montacargas y asegurar una sujeción firme del volante.
+              </li>
+              <li>
+                <i class="fas fa-shoe-prints me-2"></i>Posicionar los pies
+                firmemente en el piso del compartimento del operador.
+              </li>
+              <li>
+                <i class="fas fa-user-shield me-2"></i>Inclinar el cuerpo en la
+                dirección opuesta a la caída.
+              </li>
+              <li>
+                <i class="fas fa-lock me-2"></i>Asegurar que todas las
+                extremidades permanezcan dentro de la estructura del
+                montacargas, con el cinturón de seguridad abrochado.
+              </li>
+            </ol>
+            <p>
+              Estas acciones son cruciales para mitigar el riesgo de
+              aplastamiento por el tejadillo protector o el chasis.
+            </p>
+            <h3>
+              <i class="fas fa-lightbulb me-2"></i>Ejemplos de Aplicación de
+              Medidas de Seguridad
+            </h3>
+            <p>
+              <strong
+                ><i class="fas fa-balance-scale me-2"></i>Caso 1: Manipulación
+                de una carga pesada y el centro de carga</strong
+              >
+            </p>
+            <p>
+              Un operador se dispone a elevar una carga voluminosa cuyo peso
+              aparente es considerable. Previo a la operación, el operador
+              consulta la **placa de características** para confirmar que el
+              peso y, crucialmente, el **centro de carga** de la mercancía no
+              excedan los límites especificados del montacargas. Al verificar
+              que la carga está dentro de los parámetros seguros, ajusta las
+              horquillas para que la carga se apoye firmemente contra el
+              respaldo. Esta acción minimiza la distancia del centro de carga,
+              preservando la estabilidad longitudinal del equipo y previniendo
+              un potencial vuelco frontal.
+            </p>
+            <p>
+              <strong
+                ><i class="fas fa-road me-2"></i>Caso 2: Operación en un entorno
+                de alta densidad peatonal</strong
+              >
+            </p>
+            <p>
+              En un almacén con tráfico constante de personal y otros equipos,
+              el operador prioriza la **velocidad segura**. En lugar de operar a
+              la velocidad máxima permitida, reduce la velocidad por debajo de
+              los 10 km/h. Esta medida le otorga un mayor tiempo de reacción
+              ante movimientos inesperados de peatones o vehículos, reduciendo
+              significativamente la probabilidad de colisiones.
+            </p>
+            <p>
+              <strong
+                ><i class="fas fa-tools me-2"></i>Caso 3: Detección de una falla
+                crítica durante la inspección</strong
+              >
+            </p>
+            <p>
+              Durante la inspección diaria obligatoria, el operador detecta que
+              el sistema de frenos responde de manera inconsistente. En lugar de
+              proceder con la operación, el operador **informa de inmediato al
+              supervisor** y coloca una etiqueta de "Fuera de Servicio" en el
+              montacargas. Esta acción proactiva evita que el equipo sea
+              utilizado con un defecto que comprometería gravemente su capacidad
+              de detención, previniendo así un accidente inminente.
+            </p>
+            <p>
+              <strong
+                ><i class="fas fa-eye-slash me-2"></i>Caso 4: Movimiento de
+                carga con visibilidad restringida</strong
+              >
+            </p>
+            <p>
+              Un operador necesita trasladar una carga de grandes dimensiones
+              que obstruye completamente su campo de visión frontal. Para
+              compensar la visibilidad limitada, el operador decide circular en
+              reversa, lo que le proporciona una visión clara de la trayectoria.
+              Adicionalmente, utiliza la bocina de forma intermitente para
+              alertar a otros trabajadores sobre su presencia. Esta técnica es
+              indispensable para operar de forma segura en áreas con baja
+              visibilidad o en pasillos congestionados.
+            </p>
+            <p>
+              <strong
+                ><i class="fas fa-ban me-2"></i>Actividades Inadecuadas</strong
+              >
+            </p>
+            <p>
+              Se prohíbe el uso del montacargas para propósitos ajenos a su
+              diseño original, tales como la apertura de puertas de almacenes o
+              el empuje de otros equipos. Cualquier uso indebido compromete la
+              integridad estructural del montacargas y representa un riesgo
+              grave para la seguridad del operador y el personal circundante.
+            </p>
+          </div>
+        </section>
+
+        <section class="leccion-section-mc">
+          <button class="btn-signup-mc mt-4">
+            <i class="fas fa-arrow-alt-circle-left me-2"></i>
+            <a href="../lecciones/seguridad.html"
+              >Regresar a la lección anterior</a
+            >
+          </button>
+
+          <button class="btn-signup-mc mt-4">
+            <i class="fas fa-arrow-alt-circle-right me-2"></i>
+            <a href="../lecciones/palets.html">Ver Siguiente lección</a>
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <div class="whatsapp-btn-mc whatsapp-btn-improved-mc">
+      <a
+        href="https://wa.me/584125425095?text=Hola,%20me%20interesan%20sus%20cursos"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-link-mc"
+        aria-label="Contactar por WhatsApp"
+      >
+        <i class="fab fa-whatsapp whatsapp-icon-mc"></i>
+        <span class="whatsapp-tooltip-mc">
+          ¿Necesitas ayuda?<br />
+          <small>+58 412-5425095</small>
+        </span>
+      </a>
+    </div>
+    <footer class="footer-mc">
+      <div class="footer-container-mc">
+        <div class="footer-top-mc">
+          <div class="footer-brand-mc">
+            <img
+              src="../../img/init/logoProvi.jpeg"
+              alt="Logo"
+              class="footer-logo-mc"
+            />
+            <p class="footer-description-mc">
+              Plataforma especializada en formación técnica y tecnológica para
+              el desarrollo profesional.
+            </p>
+            <div class="footer-social-mc">
+              <a href="#" class="social-link-mc" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Enlaces rápidos</h3>
+            <ul class="footer-links-mc">
+              <li><a href="/index.html" class="footer-link-mc">Inicio</a></li>
+              <li>
+                <a href="../cursos.html" class="footer-link-mc">Cursos</a>
+              </li>
+              <li>
+                <a href="../precios.html" class="footer-link-mc">Precios</a>
+              </li>
+              <li>
+                <a href="../contacto.html" class="footer-link-mc">Contacto</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Categorías</h3>
+            <ul class="footer-links-mc">
+              <li>
+                <a href="../proximo.html" class="footer-link-mc">Electrónica</a>
+              </li>
+              <li>
+                <a href="../montacargas/manejo.html" class="footer-link-mc"
+                  >Montacargas</a
+                >
+              </li>
+              <li>
+                <a href="../proximo.html" class="footer-link-mc"
+                  >Programación</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-divider-mc"></div>
+
+        <div class="footer-bottom-mc">
+          <div class="footer-copyright-mc">
+            &copy; 2023 Plataforma de Cursos. Todos los derechos reservados.
+          </div>
+          <div class="footer-legal-mc">
+            <a href="#" class="footer-legal-link-mc">Términos de servicio</a>
+            <a href="#" class="footer-legal-link-mc">Política de privacidad</a>
+            <a href="#" class="footer-legal-link-mc">Aviso legal</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Esperar a que el DOM esté completamente cargado
+      document.addEventListener("DOMContentLoaded", function () {
+        // ========== FILTROS DE CURSOS ==========
+        const filterButtons = document.querySelectorAll(".filter-btn-mc");
+        const courseCards = document.querySelectorAll(".course-card-mc");
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remover clase active de todos los botones
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            // Agregar clase active al botón clickeado
+            this.classList.add("active");
+
+            const filterValue = this.textContent.trim();
+
+            // Filtrar cursos
+            courseCards.forEach((card) => {
+              if (filterValue === "Todos") {
+                card.style.display = "flex";
+              } else {
+                const categoryText = card.querySelector(
+                  ".course-category-mc"
+                ).textContent;
+                // Verificar si la categoría contiene el filtro (case insensitive)
+                if (
+                  categoryText.toLowerCase().includes(filterValue.toLowerCase())
+                ) {
+                  card.style.display = "flex";
+                } else {
+                  card.style.display = "none";
+                }
+              }
+            });
+          });
+        });
+
+        // ========== FUNCIONALIDAD BÁSICA PARA LA PAGINACIÓN ==========
+        document.querySelectorAll(".pagination-btn-mc").forEach((button) => {
+          button.addEventListener("click", function () {
+            document.querySelectorAll(".pagination-btn-mc").forEach((btn) => {
+              btn.classList.remove("active");
+            });
+          });
+        });
+
+        // Toggle del menú móvil
+        const navbarToggle = document.getElementById("navbarToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        navbarToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("active");
+          navbarToggle.querySelector("i").classList.toggle("fa-bars");
+          navbarToggle.querySelector("i").classList.toggle("fa-times");
+        });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

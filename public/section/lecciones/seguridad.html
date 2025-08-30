@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/cursos.css" />
+    <style>
+      /* ========== ESTILOS GENERALES ========== */
+      .leccion-page-mc {
+        background-color: #f8f9fa;
+        min-height: 100vh;
+        padding: 2rem 0;
+      }
+
+      .leccion-container-mc {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* ========== HEADER DE PÁGINA ========== */
+      .leccion-header-mc {
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .leccion-title-mc {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #13161c;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .leccion-subtitle-mc {
+        font-size: 1.2rem;
+        color: #6c757d;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        line-height: 1.6;
+      }
+
+      /* ========== NAVEGACIÓN INTERNA ========== */
+      .leccion-nav-mc {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 3rem;
+      }
+
+      .leccion-nav-link-mc {
+        background: #f8f9fa;
+        border: 1px solid #e0e0e0;
+        padding: 12px 25px;
+        border-radius: 30px;
+        color: #6c757d;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .leccion-nav-link-mc:hover {
+        background: #e9ecef;
+        color: #13161c;
+      }
+
+      .leccion-nav-link-mc.active {
+        background: #98ca3f;
+        color: #13161c;
+        border-color: #98ca3f;
+      }
+
+      /* ========== SECCIONES DE CONTENIDO ========== */
+      .leccion-section-mc {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      .leccion-section-header-mc {
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .leccion-section-icon-mc {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #0b335b, #1a1a2e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      .leccion-section-title-mc {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #13161c;
+        margin: 0;
+      }
+
+      .leccion-section-content-mc {
+        line-height: 1.7;
+        color: #6c757d;
+      }
+
+      .leccion-section-content-mc p {
+        margin-bottom: 20px;
+      }
+
+      /* ========== TARJETAS DE INFORMACIÓN ========== */
+      .leccion-cards-mc {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+      }
+
+      .leccion-card-mc {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 25px;
+        border-left: 4px solid #98ca3f;
+      }
+
+      .leccion-card-title-mc {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #13161c;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .leccion-card-content-mc {
+        color: #6c757d;
+        line-height: 1.6;
+      }
+
+      /* ========== COMPARATIVAS ========== */
+      .leccion-table-mc {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .leccion-table-mc th,
+      .leccion-table-mc td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .leccion-table-mc th {
+        background: linear-gradient(135deg, #0b335b, #1a1a2e);
+        color: white;
+        font-weight: 600;
+      }
+
+      .leccion-table-mc tr:last-child td {
+        border-bottom: none;
+      }
+
+      .leccion-table-mc tr:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 768px) {
+        .leccion-title-mc {
+          font-size: 2.2rem;
+        }
+
+        .leccion-nav-mc {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .leccion-cards-mc {
+          grid-template-columns: 1fr;
+        }
+
+        .leccion-table-mc {
+          display: block;
+          overflow-x: auto;
+        }
+
+        .leccion-section-header-mc {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .leccion-title-mc {
+          font-size: 1.8rem;
+        }
+
+        .leccion-section-mc {
+          padding: 20px;
+        }
+
+        .leccion-section-title-mc {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar-mc animate__animated animate__fadeInDown">
+      <div class="navbar-container-mc">
+        <a href="#" class="navbar-brand-mc">
+          <img src="../../img/init/logoProvi.jpeg" alt="Logo" />
+        </a>
+
+        <ul class="navbar-menu-mc">
+          <li class="navbar-item-mc">
+            <a href="/index.html" class="navbar-link-mc"
+              ><i class="fas fa-home me-2"></i>Inicio</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../cursos.html" class="navbar-link-mc"
+              ><i class="fas fa-graduation-cap me-2"></i>Cursos</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../precios.html" class="navbar-link-mc"
+              ><i class="fas fa-tags me-2"></i>Precios</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../contacto.html" class="navbar-link-mc"
+              ><i class="fas fa-envelope me-2"></i>Contacto</a
+            >
+          </li>
+        </ul>
+
+        <div class="navbar-actions-mc">
+          <div class="navbar-search-mc">
+            <i class="fas fa-search search-icon-mc"></i>
+            <input
+              type="text"
+              class="search-input-mc"
+              placeholder="Buscar..."
+            />
+          </div>
+          <button class="btn-login-mc">
+            <i class="fas fa-sign-in-alt me-2"></i
+            ><a href="../proximo.html"> Iniciar sesión</a>
+          </button>
+          <button class="btn-signup-mc">
+            <i class="fas fa-user-plus me-2"></i>
+            <a href="../proximo.html">Regístrate</a>
+          </button>
+        </div>
+
+        <button class="navbar-toggle-mc" id="navbarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="mobile-menu-mc" id="mobileMenu">
+        <ul>
+          <li class="mobile-menu-item-mc">
+            <a href="/index.html" class="mobile-menu-link-mc">Inicio</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../cursos.html" class="mobile-menu-link-mc">Cursos</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../contacto.html" class="mobile-menu-link-mc">Contacto</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../precios.html" class="mobile-menu-link-mc">Precios</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="leccion-page-mc">
+      <div class="leccion-container-mc">
+        <header class="leccion-header-mc">
+          <h1 class="leccion-title-mc">
+            Seguridad y Medidas de Precaución del Montacargas
+          </h1>
+          <p class="leccion-subtitle-mc">
+            El manejo de un montacargas exige una atención constante a las
+            normas de seguridad para proteger tanto al operador como al entorno
+            de trabajo. Este manual se enfoca en las medidas esenciales y los
+            equipos de protección personal que todo operador debe conocer para
+            evitar accidentes y garantizar una operación segura en todo momento.
+          </p>
+
+          <nav class="leccion-nav-mc">
+            <a href="#equipo" class="leccion-nav-link-mc active">
+              <i class="fas fa-tools"></i> Equipo de Protección
+            </a>
+            <a href="#procedimientos" class="leccion-nav-link-mc">
+              <i class="fas fa-clipboard-check"></i> Procedimientos Seguros
+            </a>
+            <a href="#riesgos" class="leccion-nav-link-mc">
+              <i class="fas fa-exclamation-triangle"></i> Riesgos y Casos
+            </a>
+          </nav>
+        </header>
+
+        <section id="equipo" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Equipo de Protección para el Operador
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <p>
+              El equipo de protección es crucial para la seguridad del operador
+              y debe ser revisado diariamente antes de iniciar cualquier labor.
+            </p>
+
+            <div class="leccion-cards-mc">
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-toolbox"></i> Extensión del Respaldo de la
+                  Carga
+                </h4>
+                <p class="leccion-card-content-mc">
+                  Este elemento se instala para evitar que partes sueltas de la
+                  carga puedan caer sobre el operador. Debe ser lo
+                  suficientemente alto y resistente, con aberturas que no
+                  comprometan la visibilidad del operador. Nunca debe ser
+                  retirado, ya que su ausencia puede causar lesiones graves.
+                </p>
+              </div>
+
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-umbrella"></i> Techo Protector
+                </h4>
+                <p class="leccion-card-content-mc">
+                  Ofrece una protección razonable contra la caída de objetos,
+                  aunque no puede proteger contra todos los impactos. Es
+                  importante no removerlo ni colocar objetos sobre él para
+                  mantener la seguridad y la visibilidad del operador.
+                </p>
+              </div>
+
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-car-side"></i> Cinturón de Seguridad
+                </h4>
+                <p class="leccion-card-content-mc">
+                  Es fundamental para mantener al operador seguro en su asiento
+                  en caso de un choque o volcamiento. El cinturón evita que el
+                  operador saque el cuerpo o las manos, previniendo lesiones
+                  graves en caso de una colisión o un vuelco. Además, previene
+                  posturas inadecuadas que pueden volverse repetitivas y causar
+                  problemas en la espalda, el cuello o los hombros.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="procedimientos" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Medidas y Procedimientos de Seguridad
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <p>
+              La operación segura de un montacargas requiere seguir un conjunto
+              de reglas y procedimientos para evitar riesgos. Es importante
+              además que el operador use la ropa adecuada, como zapatos de
+              seguridad y cascos de protección, y que planee bien su trabajo con
+              un encargado.
+            </p>
+            <div class="leccion-cards-mc">
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-id-card-alt"></i> La Placa de Características
+                </h4>
+                <p class="leccion-card-content-mc">
+                  Es la guía más importante para el operador, ya que especifica
+                  la capacidad nominal del montacargas. Si la placa no es
+                  legible o falta, el equipo no debe ser operado hasta que sea
+                  reemplazada. Las etiquetas de seguridad y otras placas
+                  similares permiten al operador conocer las fortalezas y
+                  limitaciones del equipo, incluyendo el peso que puede
+                  manipular y la altura de la torre.
+                </p>
+              </div>
+
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-tachometer-alt"></i> Velocidad Segura
+                </h4>
+                <p class="leccion-card-content-mc">
+                  El operador debe ajustar la velocidad según el entorno, tanto
+                  con carga como sin ella. No debe exceder los 10 km/h para
+                  garantizar el control y evitar accidentes. Siempre debe
+                  circular a una velocidad que le permita detenerse con
+                  seguridad.
+                </p>
+              </div>
+
+              <div class="leccion-card-mc">
+                <h4 class="leccion-card-title-mc">
+                  <i class="fas fa-walking"></i> Prohibición de Pasajeros
+                </h4>
+                <p class="leccion-card-content-mc">
+                  Está estrictamente prohibido transportar pasajeros en el
+                  montacargas, incluso por trayectos cortos. Esta máquina no
+                  está diseñada para el transporte de personas, y hacerlo
+                  representa un riesgo de caída o aplastamiento.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              Además, es crucial realizar una
+              <strong>inspección diaria</strong> del equipo antes de su uso.
+              Cualquier anomalía, como pernos flojos o fugas, debe ser reportada
+              inmediatamente al supervisor y el montacargas no debe ser
+              utilizado hasta que se realicen las reparaciones necesarias.
+              También es importante tomarse el tiempo para probar el
+              montacargas, especialmente los frenos, antes de comenzar a
+              trabajar.
+            </p>
+          </div>
+        </section>
+
+        <section id="riesgos" class="leccion-section-mc">
+          <div class="leccion-section-header-mc">
+            <div class="leccion-section-icon-mc">
+              <i class="fas fa-car-crash"></i>
+            </div>
+            <h2 class="leccion-section-title-mc">
+              Casos de Emergencia y Riesgos Comunes
+            </h2>
+          </div>
+
+          <div class="leccion-section-content-mc">
+            <h3>Análisis de Escenario: Volcamiento del Montacargas</h3>
+            <p>
+              El volcamiento es uno de los accidentes más graves. Si el
+              montacargas comienza a volcarse, el instinto puede ser saltar,
+              pero el manual indica que esta es la peor decisión. El operador
+              debe permanecer en el vehículo y prepararse para el impacto.
+            </p>
+            <p>
+              <strong>¿Qué hacer en caso de un volcamiento lateral?</strong>
+            </p>
+            <ol>
+              <li>
+                No salte. Quédese dentro del montacargas y agarre firmemente el
+                volante.
+              </li>
+              <li>Mantenga los pies firmemente plantados.</li>
+              <li>
+                Inclínese hacia el lado contrario de la caída. Si el volcamiento
+                es hacia la izquierda, inclínese a la derecha, y viceversa.
+              </li>
+              <li>
+                Asegúrese de que su cuerpo y extremidades (brazos y piernas)
+                permanezcan dentro del montacargas y que el cinturón de
+                seguridad esté puesto.
+              </li>
+            </ol>
+            <p>
+              Estas acciones son vitales para evitar ser aplastado por el techo
+              protector o las partes del chasis del montacargas.
+            </p>
+            <h3>Casos de Aplicación de Medidas de Seguridad</h3>
+            <p><strong>Caso 1: Manipulación de una carga pesada</strong></p>
+            <p>
+              Un operador se prepara para levantar una carga que parece muy
+              pesada. Antes de moverla, revisa la
+              <strong>placa de características</strong>
+              del montacargas para asegurarse de que el peso de la carga no
+              exceda la capacidad nominal. Al verificar que la carga está dentro
+              del límite, ajusta la posición de las horquillas para que la carga
+              quede cerca del carro, asegurando así la estabilidad y evitando
+              que el montacargas se vuelque hacia adelante.
+            </p>
+            <p><strong>Caso 2: Operación en un almacén concurrido</strong></p>
+            <p>
+              En un almacén con mucho movimiento de personal, el operador debe
+              aplicar la medida de <strong>velocidad segura</strong>. En lugar
+              de circular a la velocidad máxima, reduce la velocidad a menos de
+              10 km/h, lo que le permite tener un mejor control del equipo y
+              reaccionar a tiempo ante peatones o cambios inesperados en el
+              entorno. Esta precaución evita colisiones y mantiene a salvo a las
+              personas en el área de trabajo.
+            </p>
+            <p><strong>Caso 3: Identificación de fallas operativas</strong></p>
+            <p>
+              Durante la inspección diaria, el operador nota que uno de los
+              frenos no responde adecuadamente al pedal. En lugar de ignorar la
+              falla,
+              <strong>informa de inmediato al supervisor</strong> y coloca una
+              etiqueta de "Fuera de Servicio" en el montacargas. Esta acción
+              preventiva evita que otro operador use un equipo defectuoso,
+              previniendo un posible accidente causado por la incapacidad de
+              detener la máquina de manera segura.
+            </p>
+            <p>
+              <strong>Caso 4: Operación en un área con poca visibilidad</strong>
+            </p>
+            <p>
+              Un operador necesita mover una carga voluminosa que bloquea su
+              visión hacia adelante. Para evitar colisiones, aplica la medida de
+              <strong>manejo con precaución</strong> y opta por circular en
+              reversa, lo que le permite tener una visión clara del camino.
+              Además, usa la bocina de manera intermitente para alertar a los
+              demás trabajadores de su presencia. Esta técnica de manejo es
+              fundamental para operar de manera segura en áreas con baja
+              visibilidad o con mucho tráfico.
+            </p>
+            <p><strong>Actividades Inadecuadas</strong></p>
+            <p>
+              Se deben evitar acciones que pongan en riesgo la seguridad, como
+              el uso del montacargas para abrir puertas de almacenes o empujar
+              otros equipos. El equipo está diseñado para el levantamiento de
+              carga, y cualquier otro uso indebido compromete su estructura y la
+              seguridad del operador.
+            </p>
+          </div>
+        </section>
+
+        <section class="leccion-section-mc">
+          <button class="btn-signup-mc mt-4">
+            <i class="fas fa-arrow-alt-circle-left me-2"></i>
+            <a href="../lecciones/gravedad.html"
+              >Regresar a la leccion anterior</a
+            >
+          </button>
+
+          <button class="btn-signup-mc mt-4">
+            <i class="fas fa-arrow-alt-circle-right me-2"></i>
+            <a href="../lecciones/estructura.html">Ver Siguiente leccion</a>
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <div class="whatsapp-btn-mc whatsapp-btn-improved-mc">
+      <a
+        href="https://wa.me/584125425095?text=Hola,%20me%20interesan%20sus%20cursos"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-link-mc"
+        aria-label="Contactar por WhatsApp"
+      >
+        <i class="fab fa-whatsapp whatsapp-icon-mc"></i>
+        <span class="whatsapp-tooltip-mc">
+          ¿Necesitas ayuda?<br />
+          <small>+58 412-5425095</small>
+        </span>
+      </a>
+    </div>
+    <footer class="footer-mc">
+      <div class="footer-container-mc">
+        <div class="footer-top-mc">
+          <div class="footer-brand-mc">
+            <img
+              src="../../img/init/logoProvi.jpeg"
+              alt="Logo"
+              class="footer-logo-mc"
+            />
+            <p class="footer-description-mc">
+              Plataforma especializada en formación técnica y tecnológica para
+              el desarrollo profesional.
+            </p>
+            <div class="footer-social-mc">
+              <a href="#" class="social-link-mc" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Enlaces rápidos</h3>
+            <ul class="footer-links-mc">
+              <li><a href="/index.html" class="footer-link-mc">Inicio</a></li>
+              <li>
+                <a href="../cursos.html" class="footer-link-mc">Cursos</a>
+              </li>
+              <li>
+                <a href="../precios.html" class="footer-link-mc">Precios</a>
+              </li>
+              <li>
+                <a href="../contacto.html" class="footer-link-mc">Contacto</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Categorías</h3>
+            <ul class="footer-links-mc">
+              <li>
+                <a href="../proximo.html" class="footer-link-mc">Electrónica</a>
+              </li>
+              <li>
+                <a href="../montacargas/manejo.html" class="footer-link-mc"
+                  >Montacargas</a
+                >
+              </li>
+              <li>
+                <a href="../proximo.html" class="footer-link-mc"
+                  >Programación</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-divider-mc"></div>
+
+        <div class="footer-bottom-mc">
+          <div class="footer-copyright-mc">
+            &copy; 2023 Plataforma de Cursos. Todos los derechos reservados.
+          </div>
+          <div class="footer-legal-mc">
+            <a href="#" class="footer-legal-link-mc">Términos de servicio</a>
+            <a href="#" class="footer-legal-link-mc">Política de privacidad</a>
+            <a href="#" class="footer-legal-link-mc">Aviso legal</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Esperar a que el DOM esté completamente cargado
+      document.addEventListener("DOMContentLoaded", function () {
+        // ========== FILTROS DE CURSOS ==========
+        const filterButtons = document.querySelectorAll(".filter-btn-mc");
+        const courseCards = document.querySelectorAll(".course-card-mc");
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remover clase active de todos los botones
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            // Agregar clase active al botón clickeado
+            this.classList.add("active");
+
+            const filterValue = this.textContent.trim();
+
+            // Filtrar cursos
+            courseCards.forEach((card) => {
+              if (filterValue === "Todos") {
+                card.style.display = "flex";
+              } else {
+                const categoryText = card.querySelector(
+                  ".course-category-mc"
+                ).textContent;
+                // Verificar si la categoría contiene el filtro (case insensitive)
+                if (
+                  categoryText.toLowerCase().includes(filterValue.toLowerCase())
+                ) {
+                  card.style.display = "flex";
+                } else {
+                  card.style.display = "none";
+                }
+              }
+            });
+          });
+        });
+
+        // ========== FUNCIONALIDAD BÁSICA PARA LA PAGINACIÓN ==========
+        document.querySelectorAll(".pagination-btn-mc").forEach((button) => {
+          button.addEventListener("click", function () {
+            document.querySelectorAll(".pagination-btn-mc").forEach((btn) => {
+              btn.classList.remove("active");
+            });
+            this.classList.add("active");
+          });
+        });
+
+        // ========== NAVBAR TOGGLE PARA MÓVIL ==========
+        const navbarToggle = document.getElementById("navbarToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        // Alternar menú móvil al hacer clic
+        navbarToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("active");
+          // Cambiar icono del botón (bars/times)
+          const icon = this.querySelector("i");
+          if (mobileMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+        // Cerrar menú al hacer clic en un enlace (para móviles)
+        const mobileLinks = document.querySelectorAll(".mobile-menu-link-mc");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.remove("active");
+            navbarToggle.querySelector("i").classList.remove("fa-times");
+            navbarToggle.querySelector("i").classList.add("fa-bars");
+          });
+        });
+
+        // ========== EFECTO DE SCROLL EN NAVBAR ==========
+        window.addEventListener("scroll", function () {
+          const navbar = document.querySelector(".navbar-mc");
+          if (window.scrollY > 10) {
+            navbar.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+          } else {
+            navbar.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+          }
+        });
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

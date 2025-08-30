@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plataforma de Cursos</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Bootstrap CSS (solo para otros componentes) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CDN para particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/cursos.css" />
+  </head>
+
+  <body>
+    <nav class="navbar-mc animate__animated animate__fadeInDown">
+      <div class="navbar-container-mc">
+        <!-- Logo/Marca -->
+        <a href="#" class="navbar-brand-mc">
+          <img src="../../img/init/logoProvi.jpeg" alt="Logo" />
+        </a>
+
+        <!-- Menú principal -->
+        <ul class="navbar-menu-mc">
+          <li class="navbar-item-mc">
+            <a href="/index.html" class="navbar-link-mc"
+              ><i class="fas fa-home me-2"></i>Inicio</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../cursos.html" class="navbar-link-mc"
+              ><i class="fas fa-graduation-cap me-2"></i>Cursos</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../precios.html" class="navbar-link-mc"
+              ><i class="fas fa-tags me-2"></i>Precios</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="../contacto.html" class="navbar-link-mc"
+              ><i class="fas fa-envelope me-2"></i>Contacto</a
+            >
+          </li>
+        </ul>
+
+        <!-- Acciones (buscar, botones) -->
+        <div class="navbar-actions-mc">
+          <div class="navbar-search-mc">
+            <i class="fas fa-search search-icon-mc"></i>
+            <input
+              type="text"
+              class="search-input-mc"
+              placeholder="Buscar..."
+            />
+          </div>
+          <button class="btn-login-mc">
+            <i class="fas fa-sign-in-alt me-2"></i
+            ><a href="../proximo.html"> Iniciar sesión</a>
+          </button>
+          <button class="btn-signup-mc">
+            <i class="fas fa-user-plus me-2"></i>
+            <a href="../proximo.html">Regístrate</a>
+          </button>
+        </div>
+
+        <!-- Botón toggle para móvil -->
+        <button class="navbar-toggle-mc" id="navbarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Menú móvil -->
+      <div class="mobile-menu-mc" id="mobileMenu">
+        <ul>
+          <li class="mobile-menu-item-mc">
+            <a href="/index.html" class="mobile-menu-link-mc">Inicio</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../cursos.html" class="mobile-menu-link-mc">Cursos</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../contacto.html" class="mobile-menu-link-mc">Contacto</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="../precios.html" class="mobile-menu-link-mc">Precios</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ========== HERO DEL CURSO ========== -->
+    <section class="course-hero-mc">
+      <div class="course-hero-container-mc">
+        <div class="course-hero-content-mc">
+          <h1 class="course-title-primary-mc text-white">
+            Manejo Seguro de Montacargas
+          </h1>
+          <p class="course-description-mc">
+            Este curso está diseñado para dominar las técnicas de operación, el
+            mantenimiento preventivo y los protocolos de seguridad industrial de
+            montacargas. Adquirirás una formación integral que te capacitará
+            para operar el equipo de manera segura y eficiente, en cumplimiento
+            con los estándares del sector. Al finalizar, obtendrás una
+            certificación oficial que avala tus competencias, posicionándote
+            como un profesional calificado y listo para el mercado laboral.
+          </p>
+
+          <div class="course-meta-mc">
+            <div class="meta-item-mc">
+              <i class="fas fa-clock"></i>
+              <span>16 horas</span>
+            </div>
+            <div class="meta-item-mc">
+              <i class="fas fa-certificate"></i>
+              <span>Certificación incluida</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-hero-image-mc">
+          <img
+            src="../../img/init/monta.jpg"
+            alt="Operador de montacargas"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECCIÓN DE CONTENIDO ========== -->
+    <section class="course-content-section-mc">
+      <div class="course-container-mc">
+        <div class="course-tabs-mc">
+          <button class="course-tab-mc active" data-tab="overview">
+            Descripción
+          </button>
+          <button class="course-tab-mc" data-tab="curriculum">Temario</button>
+
+          <button class="course-tab-mc" data-tab="support">
+            Material de apoyo
+          </button>
+        </div>
+
+        <div class="course-tab-content-mc active" id="overview">
+          <h2 class="course-subtitle-mc">¿Qué aprenderás en este curso?</h2>
+          <ul class="course-learn-list-mc">
+            <li class="my-3">
+              <i class="fas fa-check-circle"></i>
+              <b>Principios básicos de operación segura:</b> Aprenderás a
+              dominar el funcionamiento de la máquina, a circular con cargas a
+              una altura segura y a realizar el levantamiento y apilamiento de
+              materiales de manera correcta. También te familiarizarás con la
+              estabilidad del montacargas y de la carga.
+            </li>
+            <li class="my-3">
+              <i class="fas fa-check-circle"></i
+              ><b>Mantenimiento preventivo y diagnóstico de fallas:</b> Se te
+              capacitará en la inspección diaria del equipo , incluyendo la
+              revisión de frenos, dirección y mecanismos de levantamiento, para
+              identificar y notificar cualquier anomalía al personal encargado
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i
+              ><b>Normativas y estándares:</b> El curso busca el cumplimiento de
+              las normas legales vigentes. Aprenderás sobre los requisitos para
+              operar un montacargas , la importancia de las etiquetas de
+              seguridad y la placa de características , así como las normativas
+              para el manejo seguro según la norma Covenin 3188-2000.
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i><b>Manejo de cargas:</b> Te
+              instruirás en las técnicas para transportar cargas de forma
+              segura, respetando la capacidad del equipo y evitando acciones que
+              puedan ocasionar inestabilidad o caídas.
+            </li>
+            <li class="my-3">
+              <i class="fas fa-check-circle"></i
+              ><b> Protocolos de emergencia y seguridad industrial:</b>
+              Conocerás las medidas de seguridad para la circulación y el
+              estacionamiento del equipo , además de los pasos a seguir en caso
+              de un volcamiento para proteger tu integridad.
+            </li>
+          </ul>
+
+          <h2 class="course-subtitle-mc">Requisitos</h2>
+          <ul class="course-requirements-mc">
+            <li><i class="fas fa-check"></i> Mayor o igual a 25 años</li>
+            <li>
+              <i class="fas fa-check"></i> No se requiere experiencia previa
+            </li>
+            <li><i class="fas fa-check"></i> Ropa de trabajo cómoda</li>
+          </ul>
+
+          <h2 class="course-subtitle-mc">¿Para quién es este curso?</h2>
+          <p class="course-text-mc">
+            Este curso está diseñado para aspirantes a operadores de
+            montacargas, personal de almacén, supervisores logísticos y
+            cualquier profesional que necesite certificación oficial en manejo
+            de equipos de carga.
+          </p>
+        </div>
+
+        <div class="support-materials-mc">
+          <div class="material-item-mc">
+            <i class="fas fa-file-pdf material-icon-mc"></i>
+            <div class="material-info-mc">
+              <h4>Manual de Operación Segura</h4>
+              <p>PDF - 2.5 MB</p>
+            </div>
+            <a
+              href="../../docts/MANUALMontacagas_Se_envia_alcorreo.docx"
+              download
+              class="material-download-mc"
+            >
+              <i class="fas fa-download"></i> Descargar
+            </a>
+          </div>
+
+          <div class="material-item-mc">
+            <i class="fas fa-file-video material-icon-mc"></i>
+            <div class="material-info-mc">
+              <h4>Triptico</h4>
+              <p>DOCX- 227 KB</p>
+            </div>
+            <a
+              href="../../docts/Triptico.docx"
+              download
+              class="material-download-mc"
+            >
+              <i class="fas fa-download"></i> Descargar
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="temario"
+          class="course-tab-pane-mc animate__animated animate__fadeIn mt-5"
+        >
+          <h3 class="tab-content-subtitle-mc">Temario</h3>
+
+          <div class="course-module-mc">
+            <div class="module-header-mc">
+              <i class="fas fa-angle-right module-icon-mc"></i>
+              <h4 class="module-title-mc">
+                Módulo 1: Introducción y Fundamentos del Montacargas
+              </h4>
+              <span class="module-duration-mc">2 Lecciones</span>
+            </div>
+            <div class="module-content-mc">
+              <ul class="lesson-list-mc">
+                <li class="lesson-item-mc">
+                  <div class="lesson-info-mc">
+                    <i class="fas fa-play-circle lesson-icon-mc"></i>
+                    <span class="lesson-title-mc"
+                      >1.1 Origen y breve historia de los montacargas</span
+                    >
+                  </div>
+
+                  <div class="lesson-preview-mc">
+                    <button class="lesson-preview-btn-mc">
+                      <a href="../lecciones/origenMontacarga.html"
+                        >Ver leccion</a
+                      >
+                    </button>
+                  </div>
+                </li>
+
+                <li class="lesson-item-mc">
+                  <div class="lesson-info-mc">
+                    <i class="fas fa-book lesson-icon-mc"></i>
+                    <span class="lesson-title-mc"
+                      >1.2 Componentes principales de un montacargas</span
+                    >
+                    <div class="lesson-preview-mc">
+                      <button class="lesson-preview-btn-mc">
+                        <a href="../lecciones/componenteMontacargas.html"
+                          >Ver leccion</a
+                        >
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="course-module-mc">
+            <div class="module-header-mc">
+              <i class="fas fa-angle-right module-icon-mc"></i>
+              <h4 class="module-title-mc">
+                Módulo 2: Seguridad Operacional y Normativas
+              </h4>
+              <span class="module-duration-mc">4 Lecciones</span>
+            </div>
+            <div class="module-content-mc">
+              <ul class="lesson-list-mc">
+                <li class="lesson-item-mc">
+                  <div class="lesson-info-mc">
+                    <i class="fas fa-exclamation-triangle lesson-icon-mc"></i>
+                    <span class="lesson-title-mc">2.1 Inspección Diaria</span>
+                    <div class="lesson-preview-mc">
+                      <button class="lesson-preview-btn-mc">
+                        <a href="../lecciones/Reviciones.html">Ver leccion</a>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="lesson-item-mc">
+                  <div class="lesson-info-mc">
+                    <i class="fas fa-gavel lesson-icon-mc"></i>
+                    <span class="lesson-title-mc"
+                      >2.2 Estabilidad y Procedimientos de Seguridad</span
+                    >
+                    <div class="lesson-preview-mc">
+                      <button class="lesson-preview-btn-mc">
+                        <a href="../lecciones/gravedad.html">Ver leccion</a>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="lesson-item-mc">
+                  <div class="lesson-info-mc">
+                    <i class="fas fa-hands-helping lesson-icon-mc"></i>
+                    <span class="lesson-title-mc"
+                      >2.3 Seguridad y Medidas de Precaución del
+                      Montacargas</span
+                    >
+                    <div class="lesson-preview-mc">
+                      <button class="lesson-preview-btn-mc">
+                        <a href="../lecciones/seguridad.html">Ver leccion</a>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+                <li class="lesson-item-mc">
+                  <div class="lesson-info-mc">
+                    <i class="fas fa-bell lesson-icon-mc"></i>
+                    <span class="lesson-title-mc"
+                      >2.4 Seguridad Operacional del Montacargas: Estabilidad,
+                      Carga y Centro de Gravedad</span
+                    >
+                    <button class="lesson-preview-btn-mc">
+                      <a href="../lecciones/estructura.html">Ver leccion</a>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="course-module-mc">
+            <div class="module-header-mc">
+              <i class="fas fa-angle-right module-icon-mc"></i>
+              <h4 class="module-title-mc">Módulo 3: Palets</h4>
+              <span class="module-duration-mc">1 Lecciones</span>
+            </div>
+            <div class="module-content-mc">
+              <ul class="lesson-list-mc">
+                <li class="lesson-item-mc">
+                  <div class="lesson-info-mc">
+                    <i class="fas fa-cogs lesson-icon-mc"></i>
+                    <span class="lesson-title-mc"
+                      >3.1 Manejo y Tipos de Palets: Un Enfoque en la Seguridad
+                      y Eficiencia</span
+                    >
+                    <button class="lesson-preview-btn-mc">
+                      <a href="../lecciones/palets.html">Ver leccion</a>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar con información del curso -->
+      <aside class="course-sidebar-mc">
+        <div class="sidebar-card-mc">
+          <h3 class="sidebar-title-mc">Este curso incluye</h3>
+          <ul class="sidebar-includes-mc">
+            <li><i class="fas fa-file-alt"></i>Recursos descargables</li>
+            <li><i class="fas fa-mobile-alt"></i> Acceso en móvil y TV</li>
+            <!--<li><i class="fas fa-tasks"></i> 5 exámenes prácticos</li>-->
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer-mc">
+      <div class="footer-container-mc">
+        <!-- Sección superior del footer -->
+        <div class="footer-top-mc">
+          <!-- Columna 1: Logo y descripción -->
+          <div class="footer-brand-mc">
+            <img
+              src="../../img/init/logoProvi.jpeg"
+              alt="Logo"
+              class="footer-logo-mc"
+            />
+            <p class="footer-description-mc">
+              Plataforma especializada en formación técnica y tecnológica para
+              el desarrollo profesional.
+            </p>
+            <div class="footer-social-mc">
+              <a href="#" class="social-link-mc" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna 2: Enlaces rápidos -->
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Enlaces rápidos</h3>
+            <ul class="footer-links-mc">
+              <li><a href="/index.html" class="footer-link-mc">Inicio</a></li>
+              <li>
+                <a href="../cursos.html" class="footer-link-mc">Cursos</a>
+              </li>
+              <li>
+                <a href="../precios.html" class="footer-link-mc">Precios</a>
+              </li>
+              <li>
+                <a href="../contacto.html" class="footer-link-mc">Contacto</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Categorías -->
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Categorías</h3>
+            <ul class="footer-links-mc">
+              <li>
+                <a href="../proximo.html" class="footer-link-mc">Electrónica</a>
+              </li>
+              <li>
+                <a href="./manejo.html" class="footer-link-mc">Montacargas</a>
+              </li>
+              <li>
+                <a href="../proximo.html" class="footer-link-mc"
+                  >Programación</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Línea divisoria -->
+        <div class="footer-divider-mc"></div>
+
+        <!-- Sección inferior del footer -->
+        <div class="footer-bottom-mc">
+          <div class="footer-copyright-mc">
+            &copy; 2023 Plataforma de Cursos. Todos los derechos reservados.
+          </div>
+          <div class="footer-legal-mc">
+            <a href="#" class="footer-legal-link-mc">Términos de servicio</a>
+            <a href="#" class="footer-legal-link-mc">Política de privacidad</a>
+            <a href="#" class="footer-legal-link-mc">Aviso legal</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Toggle del menú móvil
+      document
+        .getElementById("navbarToggle")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobileMenu");
+          mobileMenu.classList.toggle("active");
+        });
+
+      // Cerrar menú al hacer clic en un enlace
+      document.querySelectorAll(".mobile-menu-link-mc").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("mobileMenu").classList.remove("active");
+        });
+      });
+
+      // Funcionalidad de pestañas del curso
+      const tabs = document.querySelectorAll(".course-tab-mc");
+      const tabContents = document.querySelectorAll(".course-tab-content-mc");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Remover clase active de todas las pestañas y contenidos
+          tabs.forEach((t) => t.classList.remove("active"));
+          tabContents.forEach((c) => c.classList.remove("active"));
+
+          // Activar la pestaña clickeada
+          tab.classList.add("active");
+
+          // Activar el contenido correspondiente
+          const tabId = tab.getAttribute("data-tab");
+          document.getElementById(tabId).classList.add("active");
+        });
+      });
+
+      // Acordeón para módulos del curso
+      const moduleHeaders = document.querySelectorAll(".module-header-mc");
+      moduleHeaders.forEach((header) => {
+        header.addEventListener("click", function () {
+          const module = this.parentElement;
+          module.classList.toggle("active");
+        });
+      });
+    </script>
+  </body>
+</html>

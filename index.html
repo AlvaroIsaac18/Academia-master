@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plataforma de Cursos</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Bootstrap CSS (solo para otros componentes) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CDN para particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="./public/css/style.css" />
+  </head>
+
+  <body>
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar-mc animate__animated animate__fadeInDown">
+      <div class="navbar-container-mc">
+        <!-- Logo/Marca -->
+        <a href="#" class="navbar-brand-mc">
+          <img src="./public/img/init/logoProvi.jpeg" alt="Logo" />
+        </a>
+
+        <!-- Menú principal -->
+        <ul class="navbar-menu-mc">
+          <li class="navbar-item-mc">
+            <a href="/index.html" class="navbar-link-mc"
+              ><i class="fas fa-home me-2"></i>Inicio</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="./public/section/cursos.html" class="navbar-link-mc"
+              ><i class="fas fa-graduation-cap me-2"></i>Cursos</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="#precios" class="navbar-link-mc"
+              ><i class="fas fa-tags me-2"></i>Precios</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="#contacto" class="navbar-link-mc"
+              ><i class="fas fa-envelope me-2"></i>Contacto</a
+            >
+          </li>
+        </ul>
+
+        <!-- Acciones (buscar, botones) -->
+        <div class="navbar-actions-mc">
+          <div class="navbar-search-mc">
+            <i class="fas fa-search search-icon-mc"></i>
+            <input
+              type="text"
+              class="search-input-mc"
+              placeholder="Buscar..."
+            />
+          </div>
+          <button class="btn-login-mc">
+            <i class="fas fa-sign-in-alt me-2"></i
+            ><a href="./public/section/proximo.html"> Iniciar sesión</a>
+          </button>
+          <button class="btn-signup-mc">
+            <i class="fas fa-user-plus me-2"></i>
+            <a href="./public/section/proximo.html">Regístrate</a>
+          </button>
+        </div>
+
+        <!-- Botón toggle para móvil -->
+        <button class="navbar-toggle-mc" id="navbarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Menú móvil -->
+      <div class="mobile-menu-mc" id="mobileMenu">
+        <ul>
+          <li class="mobile-menu-item-mc">
+            <a href="/index.html" class="mobile-menu-link-mc">Inicio</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="./cursos.html" class="mobile-menu-link-mc">Cursos</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="./contacto.html" class="mobile-menu-link-mc">Contacto</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="./precios.html" class="mobile-menu-link-mc">Precios</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero-section-mc">
+      <!-- Contenedor para partículas -->
+      <div id="particles-js-mc"></div>
+
+      <div class="hero-container-mc">
+        <div class="hero-content-mc">
+          <h1
+            class="hero-title-mc animate__animated animate__fadeInLeft text-white"
+          >
+            Aprende programación y tecnología
+          </h1>
+          <p
+            class="hero-subtitle-mc animate__animated animate__fadeInLeft animate__delay-1s"
+          >
+            Domina las habilidades más demandadas de la industria tecnológica
+            con nuestros cursos prácticos y proyectos reales.
+          </p>
+          <div class="hero-buttons-mc">
+            <a
+              href="#precios"
+              class="hero-btn-primary-mc animate__animated animate__fadeInUp animate__delay-2s"
+              >Empieza ahora</a
+            >
+            <a
+              href="./public/section/cursos.html"
+              class="hero-btn-secondary-mc animate__animated animate__fadeInUp animate__delay-2s"
+              >Explora cursos</a
+            >
+          </div>
+        </div>
+        <div class="hero-image-mc animate__animated animate__fadeInRight">
+          <img
+            src="./public/img/init/undraw_website_zbig.svg"
+            alt="Persona programando"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTENIDO PRINCIPAL ========== -->
+    <!-- ========== SECCIÓN DE ESPECIALIDADES ========== -->
+    <section class="specialties-section-mc py-5">
+      <div class="container-mc">
+        <div class="section-header-mc text-center mb-5">
+          <h2 class="section-title-mc animate__animated animate__fadeIn">
+            Nuestras Especialidades
+          </h2>
+          <p
+            class="section-subtitle-mc animate__animated animate__fadeIn animate__delay-1s"
+          >
+            Domina las habilidades técnicas más demandadas del mercado
+          </p>
+        </div>
+
+        <div class="specialties-grid-mc">
+          <!-- Tarjeta 1: Electrónica -->
+          <div class="specialty-card-mc animate__animated animate__fadeInUp">
+            <div class="card-image-container-mc">
+              <img
+                src="./public/img/init/electronica (1).jpg"
+                alt="Electrónica"
+                class="card-image-mc"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content-mc">
+              <h3 class="card-title-mc">Electrónica</h3>
+              <p class="card-description-mc">
+                Aprende diseño, reparación y mantenimiento de circuitos
+                electrónicos.
+              </p>
+              <div class="card-meta-mc"></div>
+              <a href="./public/section/proximo.html" class="card-btn-mc"
+                >Ver cursos</a
+              >
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Mecánica -->
+          <div
+            class="specialty-card-mc animate__animated animate__fadeInUp animate__delay-1s"
+          >
+            <div class="card-image-container-mc">
+              <img
+                src="./public/img/init/mecanica.jpg"
+                alt="Mecánica"
+                class="card-image-mc"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content-mc">
+              <h3 class="card-title-mc">Mecánica</h3>
+              <p class="card-description-mc">
+                Domina el mantenimiento y reparación de sistemas mecánicos
+                industriales.
+              </p>
+              <div class="card-meta-mc"></div>
+              <a href="./public/section/proximo.html" class="card-btn-mc"
+                >Ver cursos</a
+              >
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Manejo de Montacargas -->
+          <div
+            class="specialty-card-mc animate__animated animate__fadeInUp animate__delay-2s"
+          >
+            <div class="card-image-container-mc">
+              <img
+                src="./public/img/init/monta.jpg"
+                alt="Manejo de Montacargas"
+                class="card-image-mc"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content-mc">
+              <h3 class="card-title-mc">Manejo de Montacargas</h3>
+              <p class="card-description-mc">
+                Certifícate en operación segura de equipos de carga y logística.
+              </p>
+              <div class="card-meta-mc"></div>
+              <a
+                href="./public/section/montacargas/manejo.html"
+                class="card-btn-mc"
+                >Ver cursos</a
+              >
+            </div>
+          </div>
+
+          <!-- Tarjeta 4: Programación -->
+          <div
+            class="specialty-card-mc animate__animated animate__fadeInUp animate__delay-3s"
+          >
+            <div class="card-image-container-mc">
+              <img
+                src="./public/img/init/programacion.jpg"
+                alt="Programación"
+                class="card-image-mc"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content-mc">
+              <h3 class="card-title-mc">Programación</h3>
+              <p class="card-description-mc">
+                Desarrolla software y aplicaciones con las últimas tecnologías.
+              </p>
+              <div class="card-meta-mc"></div>
+              <a href="./public/section/proximo.html" class="card-btn-mc"
+                >Ver cursos</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MEMBERSHIP SECTION ========== -->
+    <section class="membership-section-mc py-5 bg-light" id="precios">
+      <div class="container-mc">
+        <div class="section-header-mc text-center mb-5">
+          <h2 class="section-title-mc animate__animated animate__fadeIn">
+            Nuestros Planes de Membresía
+          </h2>
+          <p
+            class="section-subtitle-mc animate__animated animate__fadeIn animate__delay-1s"
+          >
+            Elige el plan perfecto para impulsar tu aprendizaje
+          </p>
+        </div>
+
+        <div class="membership-grid-mc">
+          <!-- Plan Básico -->
+          <div class="membership-card-mc animate__animated animate__fadeInUp">
+            <div class="membership-header-mc">
+              <h3 class="membership-title-mc">Básico</h3>
+              <div class="membership-price-mc">
+                <span class="price-currency-mc">$</span>
+                <span class="price-amount-mc">15</span>
+                <span class="price-period-mc">/mes</span>
+              </div>
+              <p class="membership-description-mc">
+                Ideal para quienes comienzan
+              </p>
+            </div>
+            <div class="membership-features-mc">
+              <ul class="features-list-mc">
+                <li class="feature-item-mc">
+                  <i class="fas fa-check feature-icon-mc"></i>
+                  Acceso a 5 cursos mensuales
+                </li>
+                <li class="feature-item-mc">
+                  <i class="fas fa-check feature-icon-mc"></i>
+                  Contenido básico
+                </li>
+                <li class="feature-item-mc">
+                  <i class="fas fa-check feature-icon-mc"></i>
+                  Soporte por correo
+                </li>
+                <li class="feature-item-mc feature-disabled-mc">
+                  <i class="fas fa-times feature-icon-mc"></i>
+                  Certificados
+                </li>
+                <li class="feature-item-mc feature-disabled-mc">
+                  <i class="fas fa-times feature-icon-mc"></i>
+                  Proyectos prácticos
+                </li>
+              </ul>
+            </div>
+            <div class="membership-footer-mc">
+              <a href="#" class="membership-button-mc"> Comenzar ahora </a>
+            </div>
+          </div>
+
+          <!-- Plan Estándar (Recomendado) -->
+          <div
+            class="membership-card-mc membership-popular-mc animate__animated animate__fadeInUp animate__delay-1s"
+          >
+            <div class="membership-header-mc">
+              <h3 class="membership-title-mc">Estándar</h3>
+              <div class="membership-price-mc">
+                <span class="price-currency-mc">$</span>
+                <span class="price-amount-mc">20</span>
+                <span class="price-period-mc">/mes</span>
+              </div>
+              <p class="membership-description-mc">
+                Perfecto para aprendizaje continuo
+              </p>
+            </div>
+            <div class="membership-features-mc">
+              <ul class="features-list-mc">
+                <li class="feature-item-mc">
+                  <i class="fas fa-check feature-icon-mc"></i>
+                  Acceso ilimitado a cursos
+                </li>
+                <li class="feature-item-mc">
+                  <i class="fas fa-check feature-icon-mc"></i>
+                  Contenido premium
+                </li>
+                <li class="feature-item-mc">
+                  <i class="fas fa-check feature-icon-mc"></i>
+                  Soporte prioritario
+                </li>
+                <li class="feature-item-mc">
+                  <i class="fas fa-check feature-icon-mc"></i>
+                  Certificados incluidos
+                </li>
+                <li class="feature-item-mc">
+                  <i class="fas fa-check feature-icon-mc"></i>
+                  3 proyectos prácticos/mes
+                </li>
+              </ul>
+            </div>
+            <div class="membership-footer-mc">
+              <a
+                href="#"
+                class="membership-button-mc membership-button-primary-mc"
+              >
+                <i class="fas fa-rocket me-2"></i> ¡Quiero este!
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="contact-section-mc py-5" id="contacto">
+      <div class="container-mc">
+        <div class="section-header-mc text-center mb-5">
+          <h2
+            class="section-title-mc animate__animated animate__fadeIn text-white"
+          >
+            Contáctanos
+          </h2>
+          <p
+            class="section-subtitle-mc animate__animated animate__fadeIn animate__delay-1s"
+          >
+            ¿Tienes preguntas? Escríbenos y te responderemos pronto
+          </p>
+        </div>
+
+        <div class="contact-grid-mc">
+          <!-- Formulario de contacto mejorado -->
+          <div class="contact-form-mc animate__animated animate__fadeInLeft">
+            <form class="form-mc">
+              <div class="form-header-mc">
+                <h3 class="form-title-mc">Formulario de contacto</h3>
+                <p class="form-subtitle-mc">
+                  Todos los campos son obligatorios
+                </p>
+              </div>
+
+              <div class="form-row-mc">
+                <div class="form-group-mc form-group-half-mc">
+                  <label for="name" class="form-label-mc">
+                    <i class="fas fa-user form-icon-mc"></i>
+                    Nombre completo
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="form-input-mc"
+                    placeholder="Ej: Juan Pérez"
+                    required
+                  />
+                  <div class="form-hint-mc">Mínimo 3 caracteres</div>
+                </div>
+
+                <div class="form-group-mc form-group-half-mc">
+                  <label for="email" class="form-label-mc">
+                    <i class="fas fa-envelope form-icon-mc"></i>
+                    Correo electrónico
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-input-mc"
+                    placeholder="Ej: juan@correo.com"
+                    required
+                  />
+                  <div class="form-hint-mc">
+                    Usaremos este correo para responderte
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group-mc">
+                <label for="subject" class="form-label-mc">
+                  <i class="fas fa-tag form-icon-mc"></i>
+                  Asunto
+                </label>
+                <select id="subject" class="form-select-mc" required>
+                  <option value="" disabled selected>
+                    Selecciona un asunto
+                  </option>
+                  <option value="info">Información sobre cursos</option>
+                  <option value="support">Soporte técnico</option>
+                  <option value="billing">Facturación y pagos</option>
+                  <option value="other">Otro tema</option>
+                </select>
+              </div>
+
+              <div class="form-group-mc">
+                <label for="message" class="form-label-mc">
+                  <i class="fas fa-comment-dots form-icon-mc"></i>
+                  Mensaje
+                </label>
+                <textarea
+                  id="message"
+                  class="form-textarea-mc"
+                  rows="6"
+                  placeholder="Describe detalladamente tu consulta..."
+                  required
+                ></textarea>
+                <div class="form-hint-mc">Mínimo 20 caracteres</div>
+              </div>
+
+              <div class="form-group-mc">
+                <div class="form-check-mc">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    class="form-check-input-mc"
+                    required
+                  />
+                  <label for="terms" class="form-check-label-mc">
+                    Acepto los
+                    <a href="#" class="form-link-mc">términos y condiciones</a>
+                    y la
+                    <a href="#" class="form-link-mc">política de privacidad</a>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-footer-mc">
+                <button type="submit" class="form-button-mc">
+                  <i class="fas fa-paper-plane me-2"></i> Enviar mensaje
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Información de contacto -->
+          <div class="contact-info-mc animate__animated animate__fadeInRight">
+            <!-- Mapa de Google con estilo oscuro
+            <div class="contact-map-mc">
+              <div class="map-header-mc">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3 class="map-title-mc">Nuestra ubicación</h3>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.888770225586!2d-99.16994992416434!3d19.42702053712294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sEl%20%C3%81ngel%20de%20la%20Independencia!5e0!3m2!1ses-419!2smx!4v1690834248471!5m2!1ses-419!2smx"
+                width="100%"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="map-iframe-mc"
+              >
+              </iframe>
+              <div class="map-footer-mc">
+                <i class="fas fa-directions"></i>
+                <a href="#" class="map-link-mc">Obtener direcciones</a>
+              </div>
+            </div>
+             -->
+            <!-- Horarios con estilo mejorado -->
+            <div class="schedule-card-mc">
+              <h3 class="schedule-title-mc">
+                <i class="far fa-clock"></i> Horarios de atención
+              </h3>
+              <ul class="schedule-list-mc">
+                <li class="schedule-item-mc">
+                  <span class="schedule-day-mc">Lunes - Viernes</span>
+                  <span class="schedule-hours-mc">9:00 AM - 6:00 PM</span>
+                </li>
+                <li class="schedule-item-mc">
+                  <span class="schedule-day-mc">Sábados</span>
+                  <span class="schedule-hours-mc">10:00 AM - 2:00 PM</span>
+                </li>
+                <li class="schedule-item-mc schedule-item-closed-mc">
+                  <span class="schedule-day-mc">Domingos</span>
+                  <span class="schedule-hours-mc">Cerrado</span>
+                </li>
+              </ul>
+              <div class="schedule-note-mc">
+                <i class="fas fa-info-circle"></i> Horarios sujetos a cambios en
+                días festivos
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Botón WhatsApp mejorado -->
+    <div class="whatsapp-btn-mc whatsapp-btn-improved-mc">
+      <a
+        href="https://wa.me/584125425095?text=Hola,%20me%20interesan%20sus%20cursos"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-link-mc"
+        aria-label="Contactar por WhatsApp"
+      >
+        <i class="fab fa-whatsapp whatsapp-icon-mc"></i>
+        <span class="whatsapp-tooltip-mc">
+          ¿Necesitas ayuda?<br />
+          <small>+58 412-5425095</small>
+        </span>
+      </a>
+    </div>
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer-mc">
+      <div class="footer-container-mc">
+        <!-- Sección superior del footer -->
+        <div class="footer-top-mc">
+          <!-- Columna 1: Logo y descripción -->
+          <div class="footer-brand-mc">
+            <img
+              src="../../public/img/init/logoProvi.jpeg"
+              alt="Logo"
+              class="footer-logo-mc"
+            />
+            <p class="footer-description-mc">
+              Plataforma especializada en formación técnica y tecnológica para
+              el desarrollo profesional.
+            </p>
+            <div class="footer-social-mc">
+              <a href="#" class="social-link-mc" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna 2: Enlaces rápidos -->
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Enlaces rápidos</h3>
+            <ul class="footer-links-mc">
+              <li><a href="/index.html" class="footer-link-mc">Inicio</a></li>
+              <li>
+                <a href="./public/section/cursos.html" class="footer-link-mc"
+                  >Cursos</a
+                >
+              </li>
+              <li>
+                <a href="./public/section/precios.html" class="footer-link-mc"
+                  >Precios</a
+                >
+              </li>
+              <li>
+                <a href="./public/section/contacto.html" class="footer-link-mc"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Categorías -->
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Categorías</h3>
+            <ul class="footer-links-mc">
+              <li>
+                <a href="./public/section/proximo.html" class="footer-link-mc"
+                  >Electrónica</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./public/section/montacargas/manejo.html"
+                  class="footer-link-mc"
+                  >Montacargas</a
+                >
+              </li>
+              <li>
+                <a href="./public/section/proximo.html" class="footer-link-mc"
+                  >Programación</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Línea divisoria -->
+        <div class="footer-divider-mc"></div>
+
+        <!-- Sección inferior del footer -->
+        <div class="footer-bottom-mc">
+          <div class="footer-copyright-mc">
+            &copy; 2023 Plataforma de Cursos. Todos los derechos reservados.
+          </div>
+          <div class="footer-legal-mc">
+            <a href="#" class="footer-legal-link-mc">Términos de servicio</a>
+            <a href="#" class="footer-legal-link-mc">Política de privacidad</a>
+            <a href="#" class="footer-legal-link-mc">Aviso legal</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <!-- Solo Bootstrap JS minificado (sin Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript personalizado -->
+    <script>
+      // Esperar a que el DOM esté completamente cargado
+      document.addEventListener("DOMContentLoaded", function () {
+        // ========== NAVBAR TOGGLE PARA MÓVIL ==========
+        const navbarToggle = document.getElementById("navbarToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        // Alternar menú móvil al hacer clic
+        navbarToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("active");
+
+          // Cambiar icono del botón (bars/times)
+          const icon = this.querySelector("i");
+          if (mobileMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+        // Cerrar menú al hacer clic en un enlace (para móviles)
+        const mobileLinks = document.querySelectorAll(".mobile-menu-link-mc");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.remove("active");
+            navbarToggle.querySelector("i").classList.remove("fa-times");
+            navbarToggle.querySelector("i").classList.add("fa-bars");
+          });
+        });
+
+        // ========== EFECTO DE SCROLL EN NAVBAR ==========
+        window.addEventListener("scroll", function () {
+          const navbar = document.querySelector(".navbar-mc");
+          if (window.scrollY > 10) {
+            navbar.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+          } else {
+            navbar.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+          }
+        });
+
+        // ========== CONFIGURACIÓN DE PARTICLES.JS ==========
+        particlesJS("particles-js-mc", {
+          particles: {
+            number: {
+              value: 120,
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+            },
+            color: {
+              value: "#98ca3f",
+            },
+            shape: {
+              type: "circle",
+              stroke: {
+                width: 0,
+                color: "#000000",
+              },
+              polygon: {
+                nb_sides: 5,
+              },
+            },
+            opacity: {
+              value: 0.5,
+              random: false,
+              anim: {
+                enable: false,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false,
+              },
+            },
+            size: {
+              value: 4.5,
+              random: true,
+              anim: {
+                enable: false,
+                speed: 40,
+                size_min: 0.3,
+                sync: false,
+              },
+            },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: "#98ca3f",
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 2,
+              direction: "none",
+              random: false,
+              straight: false,
+              out_mode: "out",
+              bounce: false,
+              attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200,
+              },
+            },
+          },
+          interactivity: {
+            detect_on: "canvas",
+            events: {
+              onhover: {
+                enable: true,
+                mode: "grab",
+              },
+              onclick: {
+                enable: true,
+                mode: "push",
+              },
+              resize: true,
+            },
+            modes: {
+              grab: {
+                distance: 140,
+                line_linked: {
+                  opacity: 1,
+                },
+              },
+              bubble: {
+                distance: 400,
+                size: 40,
+                duration: 2,
+                opacity: 8,
+                speed: 3,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+              push: {
+                particles_nb: 4,
+              },
+              remove: {
+                particles_nb: 2,
+              },
+            },
+          },
+          retina_detect: true,
+        });
+      });
+    </script>
+    <script src="./public/js/main.MC.js"></script>
+  </body>
+</html>

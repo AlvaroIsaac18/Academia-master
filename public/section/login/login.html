@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plataforma de Cursos</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Bootstrap CSS (solo para otros componentes) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- CDN para particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar-mc animate__animated animate__fadeInDown">
+    <div class="navbar-container-mc">
+      <!-- Logo/Marca -->
+      <a href="#" class="navbar-brand-mc">
+        <img src="./public/img/init/logoProvi.jpeg" alt="Logo" />
+      </a>
+
+      <!-- Menú principal -->
+      <ul class="navbar-menu-mc">
+        <li class="navbar-item-mc">
+          <a href="/index.html" class="navbar-link-mc">Inicio</a>
+        </li>
+        <li class="navbar-item-mc">
+          <a href="../cursos.html" class="navbar-link-mc">Cursos</a>
+        </li>
+        <li class="navbar-item-mc">
+          <a href="../precios.html" class="navbar-link-mc">Precios</a>
+        </li>
+        <li class="navbar-item-mc">
+          <a href="../contacto.html" class="navbar-link-mc">Contacto</a>
+        </li>
+      </ul>
+
+      <!-- Acciones (buscar, botones) -->
+      <div class="navbar-actions-mc">
+        <div class="navbar-search-mc">
+          <i class="fas fa-search search-icon-mc"></i>
+          <input type="text" class="search-input-mc" placeholder="Buscar..." />
+        </div>
+        <button class="btn-login-mc">
+          <i class="fas fa-sign-in-alt me-2"></i><a href="./login.html"> Iniciar sesión</a>
+        </button>
+        <button class="btn-signup-mc">
+          <i class="fas fa-user-plus me-2"></i> <a href="./register.html">Regístrate</a>
+        </button>
+      </div>
+
+      <!-- Botón toggle para móvil -->
+      <button class="navbar-toggle-mc" id="navbarToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Menú móvil -->
+    <div class="mobile-menu-mc" id="mobileMenu">
+      <ul>
+        <li class="mobile-menu-item-mc">
+          <a href="#" class="mobile-menu-link-mc">Cursos</a>
+        </li>
+        <li class="mobile-menu-item-mc">
+          <a href="#" class="mobile-menu-link-mc">Carreras</a>
+        </li>
+        <li class="mobile-menu-item-mc">
+          <a href="#" class="mobile-menu-link-mc">Planes</a>
+        </li>
+        <li class="mobile-menu-item-mc">
+          <a href="#" class="mobile-menu-link-mc">Blog</a>
+        </li>
+        <li class="mobile-menu-item-mc">
+          <a href="#" class="mobile-menu-link-mc">Live</a>
+        </li>
+        <li class="mobile-menu-item-mc">
+          <a href="#" class="mobile-menu-link-mc">Agenda</a>
+        </li>
+      </ul>
+
+      <div class="mobile-actions-mc">
+        <div class="navbar-search-mc mb-3">
+          <i class="fas fa-search search-icon-mc"></i>
+          <input type="text" class="search-input-mc" placeholder="Buscar..." />
+        </div>
+        <button class="btn-login-mc w-100 mb-2">
+          <i class="fas fa-sign-in-alt me-2"></i>Iniciar sesión
+        </button>
+        <button class="btn-signup-mc w-100">
+          <i class="fas fa-user-plus me-2"></i>Regístrate
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== SECCIÓN DE ESPECIALIDADES ========== -->
+  <div class="login-container-mc">
+    <!-- Logo -->
+    <div class="login-logo-mc">
+      <img src="./public/img/init/logoProvi.jpeg" alt="Logo" class="logo-img-mc" />
+    </div>
+
+    <!-- Formulario de login -->
+    <form class="login-form-mc">
+      <h2 class="login-title-mc">Iniciar Sesión</h2>
+
+      <!-- Grupo de email -->
+      <div class="form-group-mc">
+        <label for="email" class="form-label-mc">
+          <i class="fas fa-envelope icon-mc"></i> Correo Electrónico
+        </label>
+        <input type="email" id="email" class="form-input-mc" placeholder="tucorreo@ejemplo.com" required />
+      </div>
+
+      <!-- Grupo de contraseña -->
+      <div class="form-group-mc">
+        <label for="password" class="form-label-mc">
+          <i class="fas fa-lock icon-mc"></i> Contraseña
+        </label>
+        <input type="password" id="password" class="form-input-mc" placeholder="••••••••" required />
+        <a href="#" class="forgot-password-mc">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <!-- Botón de submit -->
+      <button type="submit" class="login-btn-mc">
+        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+      </button>
+
+      <!-- Divisor -->
+      <div class="divider-mc">
+        <span class="divider-line-mc"></span>
+        <span class="divider-text-mc">o continuar con</span>
+        <span class="divider-line-mc"></span>
+      </div>
+
+      <!-- Botón de Google -->
+      <a href="#" class="google-btn-mc">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Logo Google"
+          class="google-logo-mc" />
+        Continuar con Google
+      </a>
+
+      <!-- Enlace a registro -->
+      <p class="register-link-mc">
+        ¿No tienes una cuenta? <a href="#" class="link-mc">Regístrate aquí</a>
+      </p>
+    </form>
+  </div>
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer-mc">
+    <div class="footer-container-mc">
+      <!-- Sección superior del footer -->
+      <div class="footer-top-mc">
+        <!-- Columna 1: Logo y descripción -->
+        <div class="footer-brand-mc">
+          <img src="./public/img/init/logoProvi.jpeg" alt="Logo" class="footer-logo-mc" />
+          <p class="footer-description-mc">
+            Plataforma especializada en formación técnica y tecnológica para
+            el desarrollo profesional.
+          </p>
+          <div class="footer-social-mc">
+            <a href="#" class="social-link-mc" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link-mc" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link-mc" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link-mc" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="social-link-mc" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna 2: Enlaces rápidos -->
+        <div class="footer-col-mc">
+          <h3 class="footer-title-mc">Enlaces rápidos</h3>
+          <ul class="footer-links-mc">
+            <li><a href="#" class="footer-link-mc">Inicio</a></li>
+            <li><a href="#" class="footer-link-mc">Cursos</a></li>
+            <li><a href="#" class="footer-link-mc">Precios</a></li>
+            <li><a href="#" class="footer-link-mc">Módulos</a></li>
+            <li><a href="#" class="footer-link-mc">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Categorías -->
+        <div class="footer-col-mc">
+          <h3 class="footer-title-mc">Categorías</h3>
+          <ul class="footer-links-mc">
+            <li><a href="#" class="footer-link-mc">Electrónica</a></li>
+            <li><a href="#" class="footer-link-mc">Mecánica</a></li>
+            <li><a href="#" class="footer-link-mc">Montacargas</a></li>
+            <li><a href="#" class="footer-link-mc">Programación</a></li>
+            <li><a href="#" class="footer-link-mc">Electricidad</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Newsletter -->
+        <div class="footer-col-mc">
+          <h3 class="footer-title-mc">Suscríbete</h3>
+          <p class="footer-newsletter-text-mc">
+            Recibe las últimas novedades y ofertas especiales directamente en
+            tu correo.
+          </p>
+          <form class="footer-newsletter-mc">
+            <input type="email" placeholder="Tu correo electrónico" class="footer-input-mc" required />
+            <button type="submit" class="footer-button-mc">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Línea divisoria -->
+      <div class="footer-divider-mc"></div>
+
+      <!-- Sección inferior del footer -->
+      <div class="footer-bottom-mc">
+        <div class="footer-copyright-mc">
+          &copy; 2023 Plataforma de Cursos. Todos los derechos reservados.
+        </div>
+        <div class="footer-legal-mc">
+          <a href="#" class="footer-legal-link-mc">Términos de servicio</a>
+          <a href="#" class="footer-legal-link-mc">Política de privacidad</a>
+          <a href="#" class="footer-legal-link-mc">Aviso legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <!-- Solo Bootstrap JS minificado (sin Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript personalizado -->
+  <script>
+    // Esperar a que el DOM esté completamente cargado
+    document.addEventListener("DOMContentLoaded", function () {
+      // ========== NAVBAR TOGGLE PARA MÓVIL ==========
+      const navbarToggle = document.getElementById("navbarToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      // Alternar menú móvil al hacer clic
+      navbarToggle.addEventListener("click", function () {
+        mobileMenu.classList.toggle("active");
+
+        // Cambiar icono del botón (bars/times)
+        const icon = this.querySelector("i");
+        if (mobileMenu.classList.contains("active")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-times");
+        } else {
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      // Cerrar menú al hacer clic en un enlace (para móviles)
+      const mobileLinks = document.querySelectorAll(".mobile-menu-link-mc");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          mobileMenu.classList.remove("active");
+          navbarToggle.querySelector("i").classList.remove("fa-times");
+          navbarToggle.querySelector("i").classList.add("fa-bars");
+        });
+      });
+
+      // ========== EFECTO DE SCROLL EN NAVBAR ==========
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar-mc");
+        if (window.scrollY > 10) {
+          navbar.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+        } else {
+          navbar.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+        }
+      });
+
+      // ========== CONFIGURACIÓN DE PARTICLES.JS ==========
+      particlesJS("particles-js-mc", {
+        particles: {
+          number: {
+            value: 120,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: "#98ca3f",
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+            polygon: {
+              nb_sides: 5,
+            },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false,
+            },
+          },
+          size: {
+            value: 4.5,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 40,
+              size_min: 0.3,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#98ca3f",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "grab",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 140,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+    });
+  </script>
+  <script src="./public/js/main.MC.js"></script>
+</body>
+
+</html>

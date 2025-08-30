@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plataforma de Cursos</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Bootstrap CSS (solo para otros componentes) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CDN para particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/cursos.css" />
+  </head>
+
+  <body>
+    <nav class="navbar-mc animate__animated animate__fadeInDown">
+      <div class="navbar-container-mc">
+        <!-- Logo/Marca -->
+        <a href="#" class="navbar-brand-mc">
+          <img src="../../public/img/init/logoProvi.jpeg" alt="Logo" />
+        </a>
+
+        <!-- Menú principal -->
+        <ul class="navbar-menu-mc">
+          <li class="navbar-item-mc">
+            <a href="/index.html" class="navbar-link-mc"
+              ><i class="fas fa-home me-2"></i>Inicio</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="./cursos.html" class="navbar-link-mc"
+              ><i class="fas fa-graduation-cap me-2"></i>Cursos</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="./precios.html" class="navbar-link-mc"
+              ><i class="fas fa-tags me-2"></i>Precios</a
+            >
+          </li>
+          <li class="navbar-item-mc">
+            <a href="./contacto.html" class="navbar-link-mc"
+              ><i class="fas fa-envelope me-2"></i>Contacto</a
+            >
+          </li>
+        </ul>
+
+        <!-- Acciones (buscar, botones) -->
+        <div class="navbar-actions-mc">
+          <div class="navbar-search-mc">
+            <i class="fas fa-search search-icon-mc"></i>
+            <input
+              type="text"
+              class="search-input-mc"
+              placeholder="Buscar..."
+            />
+          </div>
+          <button class="btn-login-mc">
+            <i class="fas fa-sign-in-alt me-2"></i
+            ><a href="./proximo.html"> Iniciar sesión</a>
+          </button>
+          <button class="btn-signup-mc">
+            <i class="fas fa-user-plus me-2"></i>
+            <a href="./proximo.html">Regístrate</a>
+          </button>
+        </div>
+
+        <!-- Botón toggle para móvil -->
+        <button class="navbar-toggle-mc" id="navbarToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Menú móvil -->
+      <div class="mobile-menu-mc" id="mobileMenu">
+        <ul>
+          <li class="mobile-menu-item-mc">
+            <a href="/index.html" class="mobile-menu-link-mc">Inicio</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="./cursos.html" class="mobile-menu-link-mc">Cursos</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="./contacto.html" class="mobile-menu-link-mc">Contacto</a>
+          </li>
+          <li class="mobile-menu-item-mc">
+            <a href="./precios.html" class="mobile-menu-link-mc">Precios</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="courses-page-mc">
+      <div class="courses-container-mc">
+        <!-- Header de la página -->
+        <header class="courses-header-mc">
+          <h1 class="courses-title-mc">Nuestros Cursos</h1>
+          <p class="courses-subtitle-mc">
+            Te preparamos con las habilidades técnicas más demandadas para el
+            mundo actual. Ofrecemos formación especializada en programación web
+            frontend, para que domines la creación de interfaces de usuario
+            atractivas. También impartimos conocimientos fundamentales de
+            electrónica y te certificamos en el manejo seguro de montacargas,
+            abriéndote puertas en el sector logístico e industrial.
+          </p>
+        </header>
+
+        <!-- Filtros -->
+        <div class="courses-filters-mc">
+          <button class="filter-btn-mc active">Todos</button>
+          <button class="filter-btn-mc">Frontend</button>
+          <button class="filter-btn-mc">Electronica</button>
+          <button class="filter-btn-mc">Montacargas</button>
+        </div>
+
+        <!-- Grid de cursos -->
+        <div class="courses-grid-mc">
+          <!-- Curso 1 -->
+          <article class="course-card-mc">
+            <div class="course-image-mc">
+              <i class="fab fa-js-square"></i>
+            </div>
+            <div class="course-content-mc">
+              <div class="course-category-mc">
+                <i class="fas fa-code"></i> JS · Frontend
+              </div>
+              <h3 class="course-title-mc">JavaScript Moderno desde Cero</h3>
+              <p class="course-description-mc">
+                Domina JavaScript moderno (ES6+) con proyectos reales y las
+                mejores prácticas de desarrollo.
+              </p>
+              <hr />
+              <h4 class="text-center">Proximamente</h4>
+              <hr />
+            </div>
+          </article>
+
+          <article class="course-card-mc">
+            <div class="course-image-mc">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <div class="course-content-mc">
+              <div class="course-category-mc">
+                <i class="fas fa-code"></i> Montacargas
+              </div>
+              <h3 class="course-title-mc">Montacargas</h3>
+              <p class="course-description-mc">
+                Aprende los fundamentos operativos, las técnicas de conducción y
+                los protocolos de seguridad requeridos para la correcta
+                manipulación de equipos de montacargas en entornos industriales
+                y de almacén.
+              </p>
+
+              <button class="btn-signup-mc">
+                <i class="fa-solid fa-star me-1"></i>
+                <a href="./montacargas/manejo.html">Ver Curso</a>
+              </button>
+            </div>
+          </article>
+
+          <!-- Curso 3 -->
+          <article class="course-card-mc">
+            <div class="course-image-mc">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="course-content-mc">
+              <div class="course-category-mc">
+                <i class="fa-solid fa-microchip"></i> Electronica
+              </div>
+              <h3 class="course-title-mc">Electronica</h3>
+              <p class="course-description-mc">
+                Aprende análisis de datos, visualización y machine learning con
+                Python y sus librerías.
+              </p>
+              <hr />
+              <h4 class="text-center">Proximamente</h4>
+              <hr />
+            </div>
+          </article>
+        </div>
+
+        <!-- Paginación 
+        <div class="courses-pagination-mc">
+          <button class="pagination-btn-mc">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="pagination-btn-mc active">1</button>
+          <button class="pagination-btn-mc">2</button>
+          <button class="pagination-btn-mc">3</button>
+          <button class="pagination-btn-mc">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+-->
+      </div>
+    </main>
+    <!-- Botón WhatsApp mejorado -->
+    <div class="whatsapp-btn-mc whatsapp-btn-improved-mc">
+      <a
+        href="https://wa.me/584125425095?text=Hola,%20me%20interesan%20sus%20cursos"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-link-mc"
+        aria-label="Contactar por WhatsApp"
+      >
+        <i class="fab fa-whatsapp whatsapp-icon-mc"></i>
+        <span class="whatsapp-tooltip-mc">
+          ¿Necesitas ayuda?<br />
+          <small>+58 412-5425095</small>
+        </span>
+      </a>
+    </div>
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer-mc">
+      <div class="footer-container-mc">
+        <!-- Sección superior del footer -->
+        <div class="footer-top-mc">
+          <!-- Columna 1: Logo y descripción -->
+          <div class="footer-brand-mc">
+            <img
+              src="../../public/img/init/logoProvi.jpeg"
+              alt="Logo"
+              class="footer-logo-mc"
+            />
+            <p class="footer-description-mc">
+              Plataforma especializada en formación técnica y tecnológica para
+              el desarrollo profesional.
+            </p>
+            <div class="footer-social-mc">
+              <a href="#" class="social-link-mc" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="social-link-mc" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna 2: Enlaces rápidos -->
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Enlaces rápidos</h3>
+            <ul class="footer-links-mc">
+              <li><a href="/index.html" class="footer-link-mc">Inicio</a></li>
+              <li><a href="./cursos.html" class="footer-link-mc">Cursos</a></li>
+              <li>
+                <a href="./precios.html" class="footer-link-mc">Precios</a>
+              </li>
+              <li>
+                <a href="./contacto.html" class="footer-link-mc">Contacto</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Categorías -->
+          <div class="footer-col-mc">
+            <h3 class="footer-title-mc">Categorías</h3>
+            <ul class="footer-links-mc">
+              <li>
+                <a href="./proximo.html" class="footer-link-mc">Electrónica</a>
+              </li>
+              <li>
+                <a href="./montacargas/manejo.html" class="footer-link-mc"
+                  >Montacargas</a
+                >
+              </li>
+              <li>
+                <a href="./proximo.html" class="footer-link-mc">Programación</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Línea divisoria -->
+        <div class="footer-divider-mc"></div>
+
+        <!-- Sección inferior del footer -->
+        <div class="footer-bottom-mc">
+          <div class="footer-copyright-mc">
+            &copy; 2023 Plataforma de Cursos. Todos los derechos reservados.
+          </div>
+          <div class="footer-legal-mc">
+            <a href="#" class="footer-legal-link-mc">Términos de servicio</a>
+            <a href="#" class="footer-legal-link-mc">Política de privacidad</a>
+            <a href="#" class="footer-legal-link-mc">Aviso legal</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <!-- Solo Bootstrap JS minificado (sin Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript personalizado -->
+    <script>
+      // Esperar a que el DOM esté completamente cargado
+      document.addEventListener("DOMContentLoaded", function () {
+        // ========== FILTROS DE CURSOS ==========
+        const filterButtons = document.querySelectorAll(".filter-btn-mc");
+        const courseCards = document.querySelectorAll(".course-card-mc");
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remover clase active de todos los botones
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            // Agregar clase active al botón clickeado
+            this.classList.add("active");
+
+            const filterValue = this.textContent.trim();
+
+            // Filtrar cursos
+            courseCards.forEach((card) => {
+              if (filterValue === "Todos") {
+                card.style.display = "flex";
+              } else {
+                const categoryText = card.querySelector(
+                  ".course-category-mc"
+                ).textContent;
+                // Verificar si la categoría contiene el filtro (case insensitive)
+                if (
+                  categoryText.toLowerCase().includes(filterValue.toLowerCase())
+                ) {
+                  card.style.display = "flex";
+                } else {
+                  card.style.display = "none";
+                }
+              }
+            });
+          });
+        });
+
+        // ========== FUNCIONALIDAD BÁSICA PARA LA PAGINACIÓN ==========
+        document.querySelectorAll(".pagination-btn-mc").forEach((button) => {
+          button.addEventListener("click", function () {
+            document.querySelectorAll(".pagination-btn-mc").forEach((btn) => {
+              btn.classList.remove("active");
+            });
+            this.classList.add("active");
+          });
+        });
+
+        // ========== NAVBAR TOGGLE PARA MÓVIL ==========
+        const navbarToggle = document.getElementById("navbarToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        // Alternar menú móvil al hacer clic
+        navbarToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("active");
+          // Cambiar icono del botón (bars/times)
+          const icon = this.querySelector("i");
+          if (mobileMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+        // Cerrar menú al hacer clic en un enlace (para móviles)
+        const mobileLinks = document.querySelectorAll(".mobile-menu-link-mc");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.remove("active");
+            navbarToggle.querySelector("i").classList.remove("fa-times");
+            navbarToggle.querySelector("i").classList.add("fa-bars");
+          });
+        });
+
+        // ========== EFECTO DE SCROLL EN NAVBAR ==========
+        window.addEventListener("scroll", function () {
+          const navbar = document.querySelector(".navbar-mc");
+          if (window.scrollY > 10) {
+            navbar.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+          } else {
+            navbar.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+          }
+        });
+      });
+    </script>
+    <script src="./public/js/main.MC.js"></script>
+  </body>
+</html>
