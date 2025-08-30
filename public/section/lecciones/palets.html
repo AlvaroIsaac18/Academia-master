@@ -268,6 +268,7 @@
         }
       }
     </style>
+     <link rel="icon" type="image/png" href="../../img/init/logoProvi.jpeg" />
   </head>
 
   <body>
@@ -279,7 +280,7 @@
 
         <ul class="navbar-menu-mc">
           <li class="navbar-item-mc">
-            <a href="/index.html" class="navbar-link-mc"
+            <a href="../../../index.html" class="navbar-link-mc"
               ><i class="fas fa-home me-2"></i>Inicio</a
             >
           </li>
@@ -327,7 +328,7 @@
       <div class="mobile-menu-mc" id="mobileMenu">
         <ul>
           <li class="mobile-menu-item-mc">
-            <a href="/index.html" class="mobile-menu-link-mc">Inicio</a>
+            <a href="../../../index.html" class="mobile-menu-link-mc">Inicio</a>
           </li>
           <li class="mobile-menu-item-mc">
             <a href="../cursos.html" class="mobile-menu-link-mc">Cursos</a>
@@ -636,7 +637,7 @@
           <div class="footer-col-mc">
             <h3 class="footer-title-mc">Enlaces rápidos</h3>
             <ul class="footer-links-mc">
-              <li><a href="/index.html" class="footer-link-mc">Inicio</a></li>
+              <li><a href="../../../index.html" class="footer-link-mc">Inicio</a></li>
               <li>
                 <a href="../cursos.html" class="footer-link-mc">Cursos</a>
               </li>
@@ -705,11 +706,38 @@
                 card.style.display = "flex";
               } else {
                 const categoryText = card.querySelector(
-                  ".course"
-                );
+                  ".course-category-mc"
+                ).textContent;
+                // Verificar si la categoría contiene el filtro (case insensitive)
+                if (
+                  categoryText.toLowerCase().includes(filterValue.toLowerCase())
+                ) {
+                  card.style.display = "flex";
+                } else {
+                  card.style.display = "none";
+                }
               }
             });
           });
+        });
+
+        // ========== FUNCIONALIDAD BÁSICA PARA LA PAGINACIÓN ==========
+        document.querySelectorAll(".pagination-btn-mc").forEach((button) => {
+          button.addEventListener("click", function () {
+            document.querySelectorAll(".pagination-btn-mc").forEach((btn) => {
+              btn.classList.remove("active");
+            });
+          });
+        });
+
+        // Toggle del menú móvil
+        const navbarToggle = document.getElementById("navbarToggle");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        navbarToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("active");
+          navbarToggle.querySelector("i").classList.toggle("fa-bars");
+          navbarToggle.querySelector("i").classList.toggle("fa-times");
         });
       });
     </script>
